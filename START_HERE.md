@@ -1,6 +1,6 @@
 # Start Here
 
-Welcome. This repo is the boxed-up version of a workshop we already ran. Every day is a self-contained 60–90 minute mini-repo, so you can skim, learn, or facilitate without worrying about hidden dependencies.
+Welcome. This repo is a workshop-in-a-box for cultural heritage data workflows. Every day is a self-contained 60–90 minute module, so you can skim, learn, or facilitate without hidden dependencies.
 
 ## Quick 3-click skim
 - Click `WORKSHOP_OVERVIEW.md` for the big picture.
@@ -13,8 +13,8 @@ Welcome. This repo is the boxed-up version of a workshop we already ran. Every d
 3) Use the job aids in each `02-job-aids/` when you get stuck, and capture artifacts in `05-artifacts/`.  
 
 ## Path for trainers or adopters
-1) Skim `WORKSHOP_OVERVIEW.md` and `CONTENT_STANDARDS.md` for tone and structure.  
-2) Copy templates from `templates/` for reuse and adapt them for your context.  
+1) Skim `WORKSHOP_OVERVIEW.md` for the agenda, prep checklist, and facilitation notes.  
+2) Run Day 01 end-to-end once before teaching, then adjust the datasets and examples to match your institution.  
 
 ## Why this repo is organized this way
-Each day lives as a mini-repo with primers, labs, job aids, assessments, diagrams, and an artifacts folder. This keeps things portable: you can run a single session, swap in your own datasets, or drop the whole day into another program. Templates sit at the root so future iterations stay consistent and easy to adopt.
+Each day lives as a day folder with primers, labs, job aids, assessments, diagrams, and an artifacts folder. This keeps things portable: you can run a single session, swap in your own datasets, or adopt the whole sequence.

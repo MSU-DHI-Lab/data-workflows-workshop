@@ -16,8 +16,8 @@ Meaning drifts when we over-normalize or merge near matches without context. Tri
 Facets surface the spread of values so you do not guess. They show whether a variant is common or an outlier and keep you from collapsing meaningful differences.
 
 ## Why OpenRefine fits today
-- Strengths: fast facets, clustering suggestions, undo/redo history, and exportable operations JSON for reproducibility.
-- Limits: not an authority control system, not ideal for very large datasets. Use it for human-in-the-loop fixes before pipelines.
+- Strengths: fast facets, clustering suggestions, undo/redo history, and an exportable operations file (a saved record of the steps) for reproducibility.
+- Limits: not an authority control system, not ideal for very large datasets. Use it for human-in-the-loop fixes before you move to repeatable steps.
 - Fit: quick wins in a 60–90 minute session with a clear history you can hand off.
 
 ## Links to learn pages
@@ -27,11 +27,11 @@ Facets surface the spread of values so you do not guess. They show whether a var
 
 ## What success looks like today
 - You identify high-impact fields (rights, place, creator) and normalize them without losing meaning.
-- You export operations JSON and a cleaned CSV.
+- You export an OpenRefine operations file and a cleaned CSV.
 - You capture notes for data dictionary and README updates.
 
 ## Where people get stuck
 - Over-merging similar values: use facets and check context before merging.
-- Forgetting to record steps: export operations JSON and write brief notes.
+- Forgetting to record steps: export the OpenRefine operations file and write brief notes.
 - Losing rows on export: clear filters before exporting; verify row counts.
 - Misreading controlled vocabularies: keep the allowed list visible while cleaning.

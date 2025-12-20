@@ -1,4 +1,4 @@
-# Lab 01: Profile the Dataset (EDA)
+# Lab 01: Profile the Dataset (exploratory data analysis, sometimes called EDA)
 
 Goal: practice professional curiosity before writing checks. You will load the cleaned CSV, inspect structure, missingness, and unique values.
 
@@ -28,6 +28,6 @@ Time: ~15 minutes.
    **If it doesn't look right:** Check for trailing spaces; consider trimming upstream; update allowed lists later in validation.
 
 5) **Do:** Write 3–4 candidate checks based on what you saw (e.g., `id` not null and >0, rights in allowed list).  
-   **Why:** Keeps the gate focused on highest-risk issues.  
+   **Why:** Keeps the checks focused on highest-risk issues.  
    **You should see:** A short list of checks ready for Lab 02.  
    **If it doesn't look right:** Revisit the notebook outputs; prioritize checks that prevent publishing or join failures.

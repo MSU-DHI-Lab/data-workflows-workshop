@@ -22,7 +22,7 @@ Validation is different from cleaning: cleaning changes data; validation checks 
 
 3) **Do:** Run the load-and-preview cell; confirm the filename matches your upload.  
    **Why:** Ensures the file reads correctly and columns appear as expected.  
-   **You should see:** The first five rows with normalized `rights` and `place` values.  
+   **You should see:** The first five rows with consistent `rights` and `place` values.  
    **If it doesn't look right:** Check for extra header rows; ensure the separator is a comma; re-upload if you see garbled text.
 
 4) **Do:** Run the counts/missing-values cell.  
@@ -31,9 +31,9 @@ Validation is different from cleaning: cleaning changes data; validation checks 
    **If it doesn't look right:** Compare against the raw row count; if rows differ, re-export from OpenRefine without filters.
 
 5) **Do:** Run the distinct rights/place cell.  
-   **Why:** Verifies normalization stuck and no stray tokens remain.  
+   **Why:** Verifies your cleanup stuck and no stray tokens remain.  
    **You should see:** Rights limited to `CC BY 4.0`, `Public Domain`, `Rights Reserved`; places limited to `New York City, NY` and `Albany, NY`.  
-   **If it doesn't look right:** Reapply the operations JSON in OpenRefine, re-export, and rerun this notebook.
+   **If it doesn't look right:** Reapply the OpenRefine operations file, re-export, and rerun this notebook.
 
 6) **Do:** Run the validation summary cell and copy the output into `05-artifacts/README.md` or your notes.  
    **Why:** Captures evidence for downstream teams and future reruns.  

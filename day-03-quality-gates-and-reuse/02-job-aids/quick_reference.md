@@ -5,7 +5,7 @@
 - Checks encode shared expectations; write them so a teammate can nod and agree.
 
 ## Pandera essentials
-- Define a schema once; reuse everywhere (`DataFrameSchema` with `Check`s).
+- Define your validation rules once; reuse them everywhere (`DataFrameSchema` with `Check`s).
 - Use `lazy=True` to gather all failures at once instead of failing fast.
 - Keep checks explainable: each rule should map to a real risk (e.g., rights list prevents unsafe publishing).
 
@@ -16,5 +16,5 @@
 - Types: integers where needed, strings for text.
 
 ## Reporting
-- Save the failure cases table or markdown report for stakeholders.
+- Save the failure cases table or markdown report for colleagues.
 - Pair the report with next steps (fix data vs adjust checks vs quarantine).

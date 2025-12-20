@@ -7,7 +7,7 @@ Outputs: Three written cleaning targets in your notes (or `05-artifacts/` if you
 Time: ~15 minutes.
 
 ## Why facets first
-Facets show you how many distinct values live in a column. They make patterns and outliers obvious without editing data. Starting with facets prevents accidental over-normalization and helps you focus on the highest-impact fixes.
+Facets show you how many distinct values live in a column. They make patterns and outliers obvious without editing data. Starting with facets prevents accidental over-editing and helps you focus on the highest-impact fixes.
 
 ## Steps
 1) **Do:** Open OpenRefine and create a new project from `collection_export_raw.csv` (choose comma-separated).  
@@ -16,7 +16,7 @@ Facets show you how many distinct values live in a column. They make patterns an
    **If it doesn't look right:** Re-import and ensure you selected CSV, not TSV; confirm the first row is treated as headers.
 
 2) **Do:** Add a text facet on the `rights` column (Facet → Text facet).  
-   **Why:** Rights statements often block reuse; seeing variants early shows how much normalization is needed.  
+   **Why:** Rights statements often block reuse; seeing variants early shows how much cleanup is needed.  
    **You should see:** A facet box with several variants like `CC BY-4.0`, `cc by 4.0`, `Public domain`.  
    **If it doesn't look right:** Make sure you selected the `rights` column; if the facet is empty, check that the column is not set to blank or filtered out.
 

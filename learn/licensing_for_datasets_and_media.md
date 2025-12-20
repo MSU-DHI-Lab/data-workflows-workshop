@@ -9,7 +9,7 @@ Collections data often mixes institutional records, donor constraints, and third
 ## A concrete example (mini case study)
 Mini case study: A library releases a metadata-only CSV under CC BY 4.0 so others can use and remix it with credit. The same collection has images with donor restrictions, so those files are marked “Rights Reserved” and kept separate. The README lists both, preventing accidental misuse.
 ## How this shows up in this workshop
-- Day 04 asks you to pick a license, record it in README, LICENSE, CITATION.cff, and .zenodo.json.
+- Day 04 asks you to pick a license, record it in README, LICENSE, CITATION.cff, and `.zenodo.json` (a structured text metadata file Zenodo can read).
 - Rights tokens are normalized in Day 01–03 to keep publishing choices clear.
 - The publishing checklist reminds you to align license text and metadata.
 ## What “successful understanding” looks like
@@ -22,17 +22,17 @@ Mini case study: A library releases a metadata-only CSV under CC BY 4.0 so other
 - Misconception: “Metadata is always public domain.” Correction: Institutional policies vary; make an explicit choice and document it.
 - Misconception: “One license covers everything.” Correction: Different assets (metadata, images, code) may need separate terms; document them clearly.
 ## Practical decision guide
-- If metadata only and low risk: consider CC0 or CC BY.
-- If attribution is important but sharing is encouraged: CC BY 4.0.
-- If sensitive media exists: separate it and mark “Rights Reserved” or a stricter license.
-- If third-party content is included: keep it out of the open package or note separate terms.
-- If unsure: consult institutional policy and pick the least restrictive license that fits.
+- If the release is metadata only and low risk, then consider CC0 or CC BY.
+- If attribution is important but sharing is encouraged, then consider CC BY 4.0.
+- If sensitive media exists, then separate it and mark it “Rights Reserved” or use a stricter license.
+- If third-party content is included, then keep it out of the open package or document separate terms clearly.
+- If you are unsure, then consult institutional policy and pick the least restrictive license that fits.
 ## Troubleshooting and where people get stuck
 - Problem: License text missing. Fix: include a LICENSE file and repeat the license in README and metadata.
 - Problem: Mixed assets with different terms. Fix: document each asset type’s license in README; separate folders by license when possible.
-- Problem: Inconsistent license across files. Fix: ensure LICENSE, CITATION.cff, .zenodo.json, and README match.
+- Problem: Inconsistent license across files. Fix: ensure LICENSE, CITATION.cff, the `.zenodo.json` file, and README match.
 - Problem: Downstream users ignore terms. Fix: place license notices in prominent files and in the data package docs.
-- Problem: Unsure about donor restrictions. Fix: pause publishing; clarify with rights holders; document decisions in provenance.
+- Problem: Unsure about donor restrictions. Fix: pause publishing; clarify with rights holders; document decisions in your origin-and-changes notes.
 - Problem: Confusion between rights token and license. Fix: rights tokens describe reuse status; the license formalizes permissions. Keep both explicit.
 ## Quick glossary (local to this page)
 - License: A legal permission statement defining reuse terms.

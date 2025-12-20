@@ -1,12 +1,12 @@
 # Primer Concepts
 
 ## What today is about
-You will add quality gates to cleaned data so it can travel safely. Cleaning fixes values; validation proves they meet expectations. Both matter for trust.
+You will add quality checks to cleaned data so it can travel safely. Cleaning fixes values; validation proves they meet expectations. Both matter for trust.
 
 ## Key concepts
 - Cleaning vs validation: cleaning changes data (trim, normalize). Validation checks data against rules (types, allowed lists) to prove readiness.
-- Quality gate: a defined set of checks that data must pass before moving forward. Analogy: a condition report before an object goes on loan.
-- Schema: a structured set of rules about fields, types, ranges, and allowed values. It makes expectations explicit and versioned.
+- Quality checks: a defined set of checks that data should pass before you treat it as ready to share or publish. Analogy: a condition report before an object goes on loan.
+- Validation rules: a structured set of rules about fields, types, ranges, and allowed values. It makes expectations explicit and versioned.
 - Quiet failure: when data breaks expectations silently and flows onward. It erodes trust because downstream teams inherit issues without warning.
 
 ## Why we start small (6–10 checks)
@@ -28,7 +28,7 @@ Small sets are explainable and runnable in session time. They cover the highest-
 - Documentation practices connect to `learn/documentation_that_travels_with_data.md`.
 
 ## What success looks like today
-- A Pandera schema with 6–10 checks runs and either passes clean data or surfaces clear failure cases.
+- A Pandera set of validation rules with 6–10 checks runs and either passes clean data or surfaces clear failure cases.
 - Validation report saved and ready to share.
 - You can explain each check and the risk it prevents.
 
@@ -36,4 +36,4 @@ Small sets are explainable and runnable in session time. They cover the highest-
 - Type casting: fix with `coerce=True` or by casting in pandas first.
 - Missing files: upload or point to the correct CSV path before running.
 - Overly strict checks: start with core fields (id, rights, place, date) and loosen if needed with documented rationale.
-- Forgetting to share evidence: save the failure cases or summary so stakeholders see what was tested.
+- Forgetting to share evidence: save the failure cases or summary so colleagues see what was tested.

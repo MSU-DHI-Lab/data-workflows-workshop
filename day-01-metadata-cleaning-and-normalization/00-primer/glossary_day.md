@@ -5,5 +5,5 @@
 - **Normalization**: making values consistent in format and spelling while keeping meaning intact.
 - **Controlled vocabulary**: a predefined list of terms approved for use (e.g., rights statements list).
 - **Identifier**: a stable label that uniquely points to a record or entity.
-- **Operations JSON**: the exported recipe of every transformation you applied in OpenRefine.
+- **OpenRefine operations file**: the exported recipe of every transformation you applied in OpenRefine (often saved as `openrefine_operations.json`, a `.json` file meaning a structured text format).
 - **Validation**: checks that confirm the cleaned data meets expectations (counts, allowed values, missing fields).

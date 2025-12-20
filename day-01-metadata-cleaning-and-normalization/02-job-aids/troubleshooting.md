@@ -10,10 +10,10 @@
    - Fix: Clear filters; make sure you selected the right column; switch facet type to Text facet.
 
 4) **Too many rights variants remain**  
-   - Fix: Apply the operations JSON; trim whitespace; check case sensitivity with a lowercase transform.
+   - Fix: Apply the OpenRefine operations file; trim whitespace; check case sensitivity with a lowercase transform.
 
-5) **Place normalization missed a spelling**  
-   - Fix: Add a targeted text transform for that spelling; re-export the operations JSON.
+5) **Place names still inconsistent**  
+   - Fix: Add a targeted text transform for that spelling; re-export the operations file.
 
 6) **Creators reordered incorrectly**  
    - Fix: Undo the step; simplify to spacing fixes only; avoid automatic reordering for ambiguous names.
@@ -21,7 +21,7 @@
 7) **Exported CSV has fewer rows**  
    - Fix: Ensure no filters are active; re-export with all rows; confirm row count before and after.
 
-8) **Operations JSON is empty**  
+8) **Operations file is empty**  
    - Fix: Check the Undo/Redo tab for recorded steps; if empty, redo transforms and extract again.
 
 9) **Colab upload fails**  

@@ -12,7 +12,7 @@
 - Attribution: include CITATION.cff and license details with every shared bundle to set reuse expectations.
 
 ## Checks before sharing
-- Verify rights tokens and licenses match across README, data dictionary, LICENSE, and .zenodo.json (if used).
+- Verify rights tokens and licenses match across README, data dictionary, LICENSE, and `.zenodo.json` (a structured text metadata file, if used).
 - Confirm validation reports are included so downstream teams see quality status.
 - Ensure no uncontrolled PII or sensitive coordinates remain. Re-run facets for likely identifiers and locations.
 - Include a short “how to handle this data” note in the package README.
