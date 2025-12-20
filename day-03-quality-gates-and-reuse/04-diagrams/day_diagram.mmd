@@ -1,0 +1,6 @@
+flowchart LR
+    A[Dataset] --> B[Profile\n(shape, missing, uniques)]
+    B --> C[Define Pandera schema\n(rules of trust)]
+    C --> D[Validate data\n(lazy=True)]
+    D --> E[Quality report\n(markdown)]
+    E --> F[Usable output\n(with evidence)]

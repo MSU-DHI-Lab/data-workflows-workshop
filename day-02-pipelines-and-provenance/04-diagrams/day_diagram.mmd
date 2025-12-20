@@ -1,0 +1,9 @@
+flowchart LR
+    A[Inbox folder] --> B[GetFile\n(pick up files)]
+    B --> C[UpdateAttribute\n(set allowed rights)]
+    C --> D[ReplaceText\n(normalize rights text)]
+    D --> E[RouteOnContent\n(check allowed tokens)]
+    E -->|unmatched| F[PutFile\n(outbox)]
+    E -->|quarantine| G[PutFile\n(quarantine folder)]
+    F --> H[Provenance trace]
+    G --> H

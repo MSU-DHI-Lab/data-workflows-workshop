@@ -1,0 +1,9 @@
+# CITATION.cff Template (Stub)
+
+cff-version: 1.2.0
+message: "Please cite this workshop package when reusing."
+authors:
+  - family-names: "Last"
+    given-names: "First"
+title: "Data Workflows Workshop"
+version: 0.0.0

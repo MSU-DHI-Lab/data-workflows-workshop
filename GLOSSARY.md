@@ -1,0 +1,21 @@
+# Glossary
+
+- **Data lake**: storage for raw or varied files with minimal structure and tagging. Suited for intake and exploration.
+- **Data warehouse**: structured tables designed for analysis with defined schemas and consistent joins.
+- **Lakehouse**: combined pattern where raw files and structured tables live together with governance and performance features.
+- **Data vault**: modeling approach with hubs (stable IDs), links (relationships), and satellites (changing details) that preserves history.
+- **Schema**: defined structure for a table, including fields, types, and allowed values.
+- **Lineage**: the record of where data came from and how it changed through steps.
+- **Provenance**: descriptive history of origin, handling, and cleaning choices.
+- **DOI (Digital Object Identifier)**: persistent ID with a resolvable link and metadata for citation.
+- **Persistent ID**: any long-lived identifier that remains stable even if storage moves.
+- **Citation**: formal reference to a work with authors, title, version, and persistent ID.
+- **Versioning**: assigning numbered releases (for example, 1.0.0) so changes are traceable.
+- **License**: permissions for reuse; examples include CC BY, CC0, and Rights Reserved.
+- **OpenRefine**: desktop tool for interactive cleaning, faceting, and exportable operations history.
+- **Apache NiFi**: visual tool for building and running data pipelines with provenance and routing.
+- **Pandera**: Python library for declarative data validation on pandas dataframes.
+- **Streamlit**: Python framework to create simple web apps for sharing data views without heavy setup.
+- **Zenodo**: repository service that can mint DOIs for datasets and related artifacts.
+- **CITATION.cff**: citation file format describing how to reference a dataset or code package.
+- **Rights token**: short statement describing reuse conditions (for example, Public Domain, CC BY 4.0).

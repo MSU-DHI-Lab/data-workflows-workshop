@@ -1,0 +1,10 @@
+{
+  "upload_type": "lesson",
+  "title": "Data Workflows Workshop",
+  "creators": [
+    {"name": "First Last", "affiliation": "Org"}
+  ],
+  "description": "Placeholder metadata for the reusable workshop package.",
+  "keywords": ["data", "workflows", "training"],
+  "notes": "Update once the release is finalized."
+}
