@@ -4,8 +4,9 @@ Data vaults are a modeling approach that separates core entities (hubs), their r
 ## Why it matters for collections and cultural heritage data
 Collections data often changes as records are corrected or enriched. A data vault keeps every version and link visible, which supports origin-and-changes tracking, audit trails, and reproducible research.
 ## A simple mental model
-- Analogy 1: A data vault is like an accession log that records every object, every relationship (loan, exhibition), and every note over time in separate, stable ledgers.
-- Analogy 2: Hubs are the stable object IDs, links are the loan or exhibit ties, satellites are the evolving descriptions or rights notes attached to those objects.
+Imagine a sturdy binder on your shelf with permanent tabs for each project. Those tabs never move. Inside each tab you clip small cards that describe who something connects to and when it changed, and you tuck dated sticky notes with every new detail instead of scribbling over old ones. The tabs are your hubs, the cards are the links, and the sticky notes are the satellites that show history without erasing it.
+
+This does not mean you need a brand-new system tomorrow. It means stop deleting history when names, relationships, or rights change. In this workshop you will practice that habit when you keep original and cleaned values side by side, when Day 02 run records note every move, and when Day 03 validation reports explain exactly what changed.
 ## A concrete example (mini case study)
 Mini case study: A museum has objects (hubs), exhibits and loans (links), and descriptive metadata that changes (satellites). Instead of overwriting records, each description update is a new satellite row with a timestamp. Researchers can see how a description or rights note evolved, and the system never loses history when an exhibit relationship changes.
 ## How this shows up in this workshop

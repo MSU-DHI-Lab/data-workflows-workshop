@@ -4,8 +4,9 @@ Licensing spells out how others can reuse your datasets and media. It is the per
 ## Why it matters for collections and cultural heritage data
 Collections data often mixes institutional records, donor constraints, and third-party media. A clear license reduces legal ambiguity and protects sensitive content while encouraging reuse where appropriate.
 ## A simple mental model
-- Analogy 1: A license is like exhibit signage with rules for photography and handling. It tells visitors what is allowed.
-- Analogy 2: A license is like loan paperwork that spells out conditions and attribution requirements.
+Think about lending a favorite tool to a neighbor. You might say, “Please return it by Friday, keep it dry, and let me know if it breaks.” That quick list of terms travels with the tool so expectations are clear. A dataset license works the same way for people who want to reuse your files.
+
+Now picture shipping a fragile item with a note inside the box: how to handle it, who to credit, and what not to do. The point is not to pile on paperwork. It is to keep people from guessing about permissions or accidentally crossing a line. In this workshop you will practice writing those clear terms in Day 04 when you publish a package, and you will see why consistent rights tokens earlier in the flow make that step easier.
 ## A concrete example (mini case study)
 Mini case study: A library releases a metadata-only CSV under CC BY 4.0 so others can use and remix it with credit. The same collection has images with donor restrictions, so those files are marked “Rights Reserved” and kept separate. The README lists both, preventing accidental misuse.
 ## How this shows up in this workshop

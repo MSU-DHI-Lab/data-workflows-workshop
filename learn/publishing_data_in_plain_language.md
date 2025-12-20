@@ -4,8 +4,9 @@ Publishing means preparing data with rights, origin-and-changes notes, documenta
 ## Why it matters for collections and cultural heritage data
 Collections data can be sensitive and easily misunderstood. Publishing with care protects the institution, honors donor and rights agreements, and helps peers trust and cite your work accurately. Without clear publishing steps, people may misuse data or lose track of origin-and-changes context.
 ## A simple mental model
-Analogy 1: Publishing is like mounting an exhibit with labels and loan paperwork. You do not only place objects in a room; you provide context, rules, and credit.  
-Analogy 2: Publishing is like releasing a finding aid. It lists what is included, how to interpret it, and how to credit the source.
+Think about packing a fragile item to mail to a friend. You add padding, include a note with handling tips, and write who to contact if something breaks. The box is more than the object; it carries instructions and credit. Publishing data should feel the same: the files travel with clear notes and permission signals.
+
+Now picture sharing a photo album link with a short description of what is inside and how to credit the people in the photos. The point is not to drown anyone in paperwork. It is to stop others from guessing about reuse, context, or how to cite you. In this workshop you will practice that mindset in Day 04 by bundling README, dictionary, license, citation, and validation notes before you even consider depositing to Zenodo.
 ## A concrete example (mini case study)
 Mini case study: A repository cleans a set of oral history metadata. They bundle the data, a README with rights and notes on what changed, a data dictionary, a validation report, and choose CC BY for the metadata. They deposit to Zenodo, mint a DOI, and record it in README and CITATION.cff. Partners can cite the exact version and understand reuse boundaries.
 ## How this shows up in this workshop

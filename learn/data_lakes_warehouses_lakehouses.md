@@ -4,9 +4,9 @@ Data lakes, warehouses, and lakehouses are storage patterns for organizing data.
 ## Why it matters for collections and cultural heritage data
 Collections data arrives messy, then gets cleaned and published. Choosing the right pattern protects origin-and-changes context, rights, and meaning. If you over-structure too early, you risk discarding context. If you never add structure, teams struggle to search, join, and cite. Knowing these patterns helps you plan how records travel from intake to public reuse without losing trust.
 ## A simple mental model
-Analogy 1: A data lake is like a back room where boxes arrive as-is. You label the boxes with source and date but do not re-box them yet.  
-Analogy 2: A warehouse is like the main stacks with cataloged shelves and consistent call numbers so anyone can find items.  
-Lakehouse: Think of a well-run back room with some shelves installed. You can keep raw boxes and also arrange frequently used items on labeled shelves without moving to a different building.
+Picture your garage on a busy weekend. New boxes arrive, you mark them with a quick note, and set them on a shelf until you know what to do next. That is the lake stage: raw, labeled just enough, nothing thrown away too soon.
+
+Now think about your kitchen pantry. Staples are in clear containers with labels so you can grab what you need without hunting. That is the warehouse stage: structured, consistent, and easy to use. Between the two is a tidy workbench where you keep both raw boxes and the tools you reach for often. That blended space is the lakehouse idea. The point is not that one stage is always better. You move between them as your data matures. In this workshop you will feel the garage stage in Day 01–02 intake and movement, the pantry mindset in Day 03 checks, and the blended bench when you publish with both raw traces and curated tables in Day 04.
 ## A concrete example (mini case study)
 Mini case study: A museum digitization team receives mixed CSVs and TIFFs every month. They place raw files in a lake folder with tags for source system, ingest date, and rights. Once a quarter, they standardize the CSVs into tidy tables for public search (warehouse-style) and convert heavy-use files into columnar formats for faster queries (lakehouse-style). They keep raw and curated versions together with manifests that show which raw files fed which tables.
 ## How this shows up in this workshop

@@ -4,8 +4,9 @@ Digital Object Identifiers (DOIs) and other persistent identifiers are stable re
 ## Why it matters for collections and cultural heritage data
 Collections teams rely on origin-and-changes information and attribution. A DOI keeps the link stable even if storage moves. It shows which version someone used and how to credit the creators. Without a persistent ID, people can cite the wrong file or lose trust in your release.
 ## A simple mental model
-Analogy 1: A DOI is like an accession number for a digital object. Even if the storage location changes, the number still points to the item.  
-Analogy 2: A DOI is like a stable catalog record URL. The shelving might change, but the record link remains the same.
+Think about moving to a new house but keeping a permanent P.O. box. Even if your street address changes, mail sent to the P.O. box still finds you. A DOI plays that role for a dataset: storage can move, but the identifier keeps pointing to the right thing.
+
+Now picture a link to a photo album that always lands on the exact set of photos you shared, even if you rearrange your folders behind the scenes. That link plus a version label tells people which set they used. The point is not to add bureaucracy. It is to make sure people can find, credit, and verify the exact files you shared. In this workshop you will see this in Day 04 when you fill out Zenodo metadata and wire the DOI into README and CITATION.cff so it travels with the package.
 ## A concrete example (mini case study)
 Mini case study: An archive publishes a cleaned metadata CSV and a small set of images. They register a DOI on Zenodo with version 1.0.0. Six months later they correct 50 creator names and release version 1.1.0 with a new DOI and links back to 1.0.0. Researchers can cite the exact version they used and understand what changed.
 ## How this shows up in this workshop

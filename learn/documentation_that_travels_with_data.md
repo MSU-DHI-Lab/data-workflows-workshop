@@ -4,8 +4,9 @@ Documentation that travels with data includes README files, data dictionaries, o
 ## Why it matters for collections and cultural heritage data
 Collections data carries stories, rights, and sensitivities. When files leave your hands, good documentation prevents misuse, preserves origin-and-changes context, and helps others interpret fields correctly. Without it, downstream users can misread fields or lose track of redactions and rights.
 ## A simple mental model
-- Analogy 1: Documentation is like a gallery label that stays with an object even when it is loaned. It tells the story and handling instructions.
-- Analogy 2: Documentation is like a field notebook that rides along with specimens. It explains where, when, and how items were collected.
+Imagine buying a piece of furniture that arrives with no instructions. You could guess, but you would probably waste time or damage something. Documentation that travels with data is the instruction sheet taped inside the box: it tells you what each piece is, how it fits together, and how to care for it.
+
+Now think about handing over your home Wi-Fi password to a guest. You might also share which network to pick and a reminder about a weak spot in the house. Those small notes go with the password so no one has to guess. The point is not to create busywork. It is to keep meaning, rights, and origin visible when the spreadsheet or images leave your server. In this workshop you will practice that habit every day: saving OpenRefine steps, writing validation summaries, and packaging README and dictionaries in Day 04.
 ## A concrete example (mini case study)
 Mini case study: An archive shares a cleaned CSV and associated scans. They include a README describing the source system, a data dictionary defining each field, notes on what changed, and a validation report from Day 03 checks. A partner ingesting the files can see what changed, which rights tokens apply, and how to cite the dataset.
 ## How this shows up in this workshop
