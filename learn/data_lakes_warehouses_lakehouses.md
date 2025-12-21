@@ -4,7 +4,7 @@ Data lakes, warehouses, and lakehouses are storage patterns for organizing data.
 ## Why it matters for collections and cultural heritage data
 Collections data arrives messy, then gets cleaned and published. Choosing the right pattern protects origin-and-changes context, rights, and meaning. If you over-structure too early, you risk discarding context. If you never add structure, teams struggle to search, join, and cite. Knowing these patterns helps you plan how records travel from intake to public reuse without losing trust.
 ## A simple mental model
-Picture your garage on a busy weekend. New boxes arrive, you mark them with a quick note, and set them on a shelf until you know what to do next. That is the lake stage: raw, labeled just enough, nothing thrown away too soon.
+Picture your garage on a busy weekend. New boxes arrive, you mark them with a quick note, and set them on a shelf until you know what to do next. That is the lake stage: raw, labeled minimally, nothing thrown away too soon.
 
 Now think about your kitchen pantry. Staples are in clear containers with labels so you can grab what you need without hunting. That is the warehouse stage: structured, consistent, and easy to use. Between the two is a tidy workbench where you keep both raw boxes and the tools you reach for often. That blended space is the lakehouse idea. The point is not that one stage is always better. You move between them as your data matures. In this workshop you will feel the garage stage in Day 01–02 intake and movement, the pantry mindset in Day 03 checks, and the blended bench when you publish with both raw traces and curated tables in Day 04.
 ## A concrete example (mini case study)

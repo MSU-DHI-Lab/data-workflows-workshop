@@ -4,7 +4,7 @@ This folder gathers plain-language explainers that connect collections work to b
 ## Why it matters for collections and cultural heritage data
 Collections teams often meet data-engineering terms when cleaning, validating, or publishing. These explainers reduce guesswork so you can adapt the workshop patterns back at your institution.
 ## A simple mental model
-Think about the map you grab at the entrance to a park. You glance at it to orient yourself and then keep walking. These pages are that map for the data concepts in this workshop, giving you just enough guidance to stay on the trail.
+Think about the map you grab at the entrance to a park. You glance at it to orient yourself and then keep walking. These pages are that map for the data concepts in this workshop, giving you sufficient guidance to stay on the trail.
 
 Now picture a small pocket guide you keep in your backpack. When you see something new, you flip to the page that matches and get a quick description plus what to do next. That is how to use these explainers: pull the one you need for the task at hand and keep moving. The point is not to read every page in order. It is to make each day’s work steadier and to reduce guessing.
 ## A concrete example (mini case study)

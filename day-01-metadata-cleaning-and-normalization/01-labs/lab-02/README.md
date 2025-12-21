@@ -17,7 +17,7 @@ Time: ~30 minutes.
 - **Rights:** high-impact for reuse; ambiguity blocks sharing. We make values consistent with a short allowed list without inventing new statements.
 - **Place:** common search facet; small differences break aggregation. We make names consistent (city/state) while keeping the original intent.
 - **Creator:** attribution needs consistency; we tidy spacing and a light Last, First pattern without pretending to do full authority control.
-- The OpenRefine operations file is the most important deliverable because it lets anyone replay your exact steps on future exports.
+- The OpenRefine operations file is the most important outcome because it lets anyone replay your exact steps on future exports.
 
 ## Steps
 1) **Do:** Open your Day 01 project in OpenRefine (or import the raw CSV again).  

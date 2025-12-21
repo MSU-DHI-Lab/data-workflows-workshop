@@ -5,8 +5,8 @@ Welcome. This final day focuses on packaging your work so others can reuse it sa
 ## Why publishing needs care
 Publishing is different from sharing. It adds clear rights and reuse terms, a short history of what changed, and a stable reference (a DOI) so people can cite and build on your work without guessing.
 
-## Why publishing artifacts matter
-Each artifact carries a piece of the trust story:
+## Why these publishing files matter
+Each file carries a piece of the trust story:
 - README: what this is, where it came from, how to use it safely.
 - Data dictionary: what each field means so meaning doesn’t drift.
 - LICENSE: how others may reuse the work.
@@ -33,7 +33,7 @@ Each artifact carries a piece of the trust story:
 - Job aids: `02-job-aids/`
 - Assessments: `03-assessments/`
 - Diagrams: `04-diagrams/`
-- Artifacts: `05-artifacts/`
+- Files created: `05-artifacts/`
 
 ## What success looks like
 - You produce a single package folder that contains data, docs, and checks.

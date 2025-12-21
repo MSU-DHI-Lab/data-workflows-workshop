@@ -15,7 +15,7 @@ Welcome. Today we add trust signals to your data with lightweight, readable vali
 - Profile the dataset to see shape, missingness, and uniques.
 - Define a Pandera set of validation rules (Python + Colab) that encodes 6–10 clear checks.
 - Run validation against clean and intentionally bad data to see how failures are reported.
-- Capture a markdown report and a reusable `validation_schema.py` artifact.
+- Capture a markdown report and a reusable `validation_schema.py` file.
 
 ## Suggested timing (so you can plan your session)
 - Lab 01 (first look at the data): ~15 minutes
@@ -28,7 +28,7 @@ Welcome. Today we add trust signals to your data with lightweight, readable vali
 - Job aids: `02-job-aids/`
 - Assessments: `03-assessments/`
 - Diagrams: `04-diagrams/`
-- Artifacts: `05-artifacts/`
+- Files created: `05-artifacts/`
 
 If you're short on time: run Lab 01 to understand the data, then Lab 02 with the provided rules file, and skim the Lab 03 report output to see how failures surface.
 

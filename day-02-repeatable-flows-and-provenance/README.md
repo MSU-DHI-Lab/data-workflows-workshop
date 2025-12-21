@@ -25,7 +25,7 @@ Welcome back. Today you build a small, explainable NiFi flow that moves a file f
 - Job aids: `02-job-aids/`
 - Assessments: `03-assessments/`
 - Diagrams: `04-diagrams/`
-- Artifacts: `05-artifacts/`
+- Files created: `05-artifacts/`
 
 If you're short on time: run Lab 01, then Lab 02 through the outbox step, and read the run record walkthrough notes in Lab 03.
 

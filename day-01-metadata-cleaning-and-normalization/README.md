@@ -25,7 +25,7 @@ If you have only 30 minutes, do Lab 01 and the first half of Lab 02 to capture t
 - Job aids: `02-job-aids/`
 - Assessments: `03-assessments/`
 - Diagrams: `04-diagrams/`
-- Artifacts drop zone: `05-artifacts/`
+- Files produced: `05-artifacts/`
 
 ## What success looks like
 - You can explain, in plain language, what you changed and why.
@@ -37,7 +37,7 @@ If you have only 30 minutes, do Lab 01 and the first half of Lab 02 to capture t
 - OpenRefine will not open: confirm address 3333 is free, then restart OpenRefine.
 - Facets show unexpected blanks: clear filters and confirm the correct column is selected.
 - You are worried about losing meaning: keep a short note explaining any normalization rule that collapses values.
-- You are worried about losing meaning: keep a short note explaining any rule that collapses multiple values into one.
+
 - Exports look different than expected: confirm you exported the current project view and used UTF-8.
 
 ## If you're short on time

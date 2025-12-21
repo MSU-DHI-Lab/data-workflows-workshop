@@ -21,7 +21,7 @@ Cultural data deserves the same care and clarity as any research dataset. This w
 ## Pace and expectations
 - Four sessions, each 60–90 minutes, each standing on its own. You can run them in sequence or pick the day you need.
 - Arrive with a modern browser and access to the listed tools (see `TOOLCHAIN_SETUP.md` for specifics).
-- Success looks like producing the day’s artifacts, capturing what changed, and knowing how to repeat or adapt the steps later.
+- Success looks like producing the day’s files, capturing what changed, and knowing how to repeat or adapt the steps later.
 
 ## Workshop flow: legibility → repeatability → quality → safe reuse and publishing
 We start by making records legible (Day 01), then design repeatable movement (Day 02), add quality checks that travel with the data (Day 03), and finish with safe reuse and publishing patterns (Day 04). This order mirrors real cultural heritage work: you clean so others can read, you make the movement repeatable so others can depend on it, you check quality so others can trust, and you publish so others can cite and build.
