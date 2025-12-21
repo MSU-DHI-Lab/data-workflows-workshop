@@ -4,10 +4,10 @@
 You will build a small, explainable flow in Apache NiFi that moves files from inbox to outbox, routes questionable records to quarantine, and captures a run record (NiFi calls this **Provenance**, meaning: a trace of what happened to a file) so you can show exactly what happened.
 
 ## Key concepts
-- Repeatable flow: a sequence of steps that move and transform data. Analogy: a staged conservation workflow where an object moves from intake to cleaning to storage with logs at each station.
-- Run record: recorded history of how a file moved and changed. Analogy: chain of custody for objects; knowing who handled it, when, and what was done.
+- Repeatable flow: a sequence of steps that move and transform data. Imagine a kitchen prep line: ingredients move from wash to chop to cook with a label at each station so nothing is missed.
+- Run record: recorded history of how a file moved and changed. Think of a delivery tracking log that shows every handoff and timestamp so you can explain where a package went.
 - Lineage: NiFi’s graph view for one file. It lets you answer “where did this value come from?” without guessing.
-- Quarantine routing: a deliberate path for suspect or invalid records so they do not mix with clean outputs. Analogy: pulling an object aside for condition concerns.
+- Quarantine routing: a deliberate path for suspect or invalid records so they do not mix with clean outputs. Picture setting a questionable item aside on a separate shelf until you can inspect it.
 
 ## Why NiFi fits today
 - Strengths: drag-and-drop processors, built-in run record, back pressure on queues, easy routing for quarantine, and a rich set of file processors. Good for visual explainability.

@@ -4,9 +4,9 @@
 You will make messy metadata legible without losing meaning. The goal is to normalize values, document changes, and prepare for repeatable flows.
 
 ## Key concepts
-- Normalization: making values consistent in format and wording without changing their meaning. Analogy: shelving books so all authors are filed the same way even if labels were printed differently.
-- Controlled vocabularies: agreed lists of terms for subjects, places, or rights. Analogy: using a shared subject heading list so two catalogers do not invent new terms.
-- Identifiers: stable labels that point to a record across systems. Analogy: an accession number that always refers to the same object.
+- Normalization: making values consistent in format and wording without changing their meaning. Think of sorting a box of cables: you group and label them so anyone can grab the right one without guessing.
+- Controlled vocabularies: agreed lists of terms for subjects, places, or rights. Picture a toolbox with labeled compartments so everyone reaches for the same label instead of inventing new ones.
+- Identifiers: stable labels that point to a record across systems. Imagine naming your home Wi-Fi network uniquely so every device knows exactly which one to join.
 - Provenance: the record of how data was sourced and changed. Keep it visible so others can trust the results.
 
 ## Why meaning can be lost

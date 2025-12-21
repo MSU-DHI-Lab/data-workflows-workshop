@@ -5,7 +5,7 @@ You will add quality checks to cleaned data so it can travel safely. Cleaning fi
 
 ## Key concepts
 - Cleaning vs validation: cleaning changes data (trim, normalize). Validation checks data against rules (types, allowed lists) to prove readiness.
-- Quality checks: a defined set of checks that data should pass before you treat it as ready to share or publish. Analogy: a condition report before an object goes on loan.
+- Quality checks: a defined set of checks that data should pass before you treat it as ready to share or publish. Think of it like a pre-trip car checklist: confirm the lights, brakes, and fuel before you drive so surprises do not happen on the road.
 - Validation rules: a structured set of rules about fields, types, ranges, and allowed values. It makes expectations explicit and versioned.
 - Quiet failure: when data breaks expectations silently and flows onward. It erodes trust because downstream teams inherit issues without warning.
 

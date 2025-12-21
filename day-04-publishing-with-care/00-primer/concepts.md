@@ -4,7 +4,7 @@
 You will package cleaned data with documentation, rights, and citation details so it can be reused and cited safely. The focus is publishing artifacts, careful reuse, and an optional handoff app.
 
 ## Key concepts
-- Publishing with care: practices that keep data safe, explainable, and respectful of rights and context. Analogy: handling restricted fields or donor info carefully, as you would handle fragile objects.
+- Publishing with care: practices that keep data safe, explainable, and respectful of rights and context. Think of packing a fragile item for shipping: you add padding, clear labels, and a note on how to handle it so it arrives intact.
 - Publish package: a bundle with data, documentation, and checks ready for partners or the public. It lets the work travel without you in the room.
 - DOI: a persistent, citable link with versioning that provides continuity about which version someone used.
 - Versioning: tagging releases so changes are trackable and citable.

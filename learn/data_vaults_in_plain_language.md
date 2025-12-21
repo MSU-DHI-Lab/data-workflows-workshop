@@ -8,7 +8,7 @@ Imagine a sturdy binder on your shelf with permanent tabs for each project. Thos
 
 This does not mean you need a brand-new system tomorrow. It means stop deleting history when names, relationships, or rights change. In this workshop you will practice that habit when you keep original and cleaned values side by side, when Day 02 run records note every move, and when Day 03 validation reports explain exactly what changed.
 ## A concrete example (mini case study)
-Mini case study: A museum has objects (hubs), exhibits and loans (links), and descriptive metadata that changes (satellites). Instead of overwriting records, each description update is a new satellite row with a timestamp. Researchers can see how a description or rights note evolved, and the system never loses history when an exhibit relationship changes.
+Mini case study: A team tracks devices checked out to staff. Each device has a stable ID (hub), check-out/check-in events (links), and condition notes that change over time (satellites). Instead of overwriting notes, each update is a new dated entry. Later, anyone can see the full history of who had the device and how its condition changed without guessing or digging through emails.
 ## How this shows up in this workshop
 - When you keep original and cleaned values side by side, you are thinking like a vault (never losing history).
 - Run record notes captured in Day 02 flows and Day 03 validation echo the vault goal: track change rather than overwrite.
@@ -24,7 +24,7 @@ Mini case study: A museum has objects (hubs), exhibits and loans (links), and de
 - Misconception: “Vault means no curation.” Correction: You still curate; you retain each version and capture when changes happened.
 ## Practical decision guide
 - If history and auditability are critical, then structure data so original and updated values both remain.
-- If relationships change often (loans, exhibits), then log them as separate link records with dates.
+- If relationships change often (people borrowing devices, files moving between folders), then log them as separate link records with dates.
 - If descriptions or rights frequently update, then store them as timestamped satellite rows instead of overwriting.
 - If storage is tight and changes are rare, then log only major versions but still avoid silent overwrites.
 - If you are building repeatable movement, then include timestamps and source markers to mimic vault traceability.
@@ -37,7 +37,7 @@ Mini case study: A museum has objects (hubs), exhibits and loans (links), and de
 - Problem: Performance concerns. Fix: index hub keys and dates; archive old versions if needed but never discard without policy.
 ## Quick glossary (local to this page)
 - Hub: table of stable business keys (e.g., object IDs).
-- Link: table capturing relationships between hubs (e.g., object-to-exhibit).
+- Link: table capturing relationships between hubs (for example, device-to-user).
 - Satellite: table holding descriptive attributes over time for hubs or links.
 - Effective date: timestamp when a satellite record became valid.
 - Business key: the stable identifier used to tie records together.
