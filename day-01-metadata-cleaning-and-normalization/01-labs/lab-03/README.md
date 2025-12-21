@@ -6,6 +6,8 @@ Inputs: `../lab-02/outputs/collection_cleaned.csv`
 Outputs: Validation summary (copy into `05-artifacts/` or your notes)
 Time: ~20 minutes.
 
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/watrall/data-workflows-workshop/blob/main/day-01-metadata-cleaning-and-normalization/01-labs/lab-03/notebooks/day01_validation.ipynb)
+
 ## Why validate right after cleaning
 Validation is different from cleaning: cleaning changes data; validation checks the results. Running checks immediately catches drop/miss issues before the file travels to someone else’s workflow.
 

@@ -6,6 +6,8 @@ Inputs: `inputs/collection_with_failures.csv`, `artifacts/validation_schema.py`
 Outputs: `validation_report.md` plus your notes
 Time: ~20 minutes.
 
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/watrall/data-workflows-workshop/blob/main/day-03-quality-gates-and-reuse/01-labs/lab-03/notebooks/lab03_report.ipynb)
+
 ## Steps
 1) **Do:** Open `notebooks/lab03_report.ipynb` in Colab or locally (run it from `lab-03/`) and run the install cell.  
    **Why:** Ensures Pandera is available in this session and paths resolve to the rules file and inputs.  

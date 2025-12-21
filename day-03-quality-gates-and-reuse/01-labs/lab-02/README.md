@@ -6,6 +6,8 @@ Inputs: `../lab-01/inputs/collection_cleaned.csv`
 Outputs: Validation run, rules saved to `artifacts/validation_schema.py`
 Time: ~30 minutes.
 
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/watrall/data-workflows-workshop/blob/main/day-03-quality-gates-and-reuse/01-labs/lab-02/notebooks/lab02_pandera.ipynb)
+
 ## Steps
 1) **Do:** Open `notebooks/lab02_pandera.ipynb` in Colab or locally and run the install cell.  
    **Why:** Ensures Pandera is available; Colab does not ship with it by default.  

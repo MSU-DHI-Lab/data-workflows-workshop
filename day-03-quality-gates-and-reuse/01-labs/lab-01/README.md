@@ -6,6 +6,8 @@ Inputs: `inputs/collection_cleaned.csv`
 Outputs: Notes on shape, missingness, and allowed lists (keep in `05-artifacts/` if you like)
 Time: ~15 minutes.
 
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/watrall/data-workflows-workshop/blob/main/day-03-quality-gates-and-reuse/01-labs/lab-01/notebooks/lab01_profile.ipynb)
+
 ## Steps
 1) **Do:** Open `notebooks/lab01_profile.ipynb` in Colab or locally and run the first cell to load the CSV.  
    **Why:** Trust begins with a clean load; you need to see columns as the code will.  
