@@ -4,11 +4,11 @@ Welcome. This repo is a workshop-in-a-box for cultural heritage data workflows. 
 
 ## Quick 3-click skim
 - Click `WORKSHOP_OVERVIEW.md` for the big picture.
-- Click `TOOLCHAIN_SETUP.md` to see what access you need.
+- Click `TOOLBOX_SETUP.md` to see what access you need.
 - Click `day-01-metadata-cleaning-and-normalization/` to preview the flow and artifacts.
 
 ## Path for learners
-1) Read this page and `TOOLCHAIN_SETUP.md` to confirm you’re ready.  
+1) Read this page and `TOOLBOX_SETUP.md` to confirm you’re ready.  
 2) Start with Day 01 for legibility, then jump to the day that fits your immediate need. Each stands alone.  
 3) Use the job aids in each `02-job-aids/` when you get stuck, and capture artifacts in `05-artifacts/`.  
 

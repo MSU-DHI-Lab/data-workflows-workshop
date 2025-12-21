@@ -14,7 +14,7 @@ This repository is a four-part workshop-in-a-box for cultural heritage practitio
 - If you will run everything locally: OpenRefine and Python 3.9+.
 - If you will run Day 02 locally: Docker access for NiFi.
 
-For setup and fallbacks, use `TOOLCHAIN_SETUP.md`.
+For setup and fallbacks, use `TOOLBOX_SETUP.md`.
 
 ## Session structure (60 to 90 minutes)
 Each day follows the same shape:
@@ -67,7 +67,7 @@ Each day follows the same shape:
 	- Colab can install Pandera and run a simple cell.
 
 ## Facilitator day-of checklist (30 minutes)
-- Open: root README, `TOOLCHAIN_SETUP.md`, and the current day README.
+- Open: root README, `TOOLBOX_SETUP.md`, and the current day README.
 - Confirm file paths learners will use and where outputs should be saved.
 - Set expectations: learners should write down what they did, what changed, and what success looks like.
 
@@ -82,5 +82,4 @@ A participant has completed the workshop when they can:
 - Produce the day outputs.
 - Explain, in plain language, what changed and why.
 - Point to evidence that supports trust and reuse (OpenRefine operations file, notes on what changed, validation report, licensing and citation artifacts).
-
 

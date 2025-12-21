@@ -1,4 +1,4 @@
-# Toolchain Setup
+# Toolbox Setup
 
 This workshop uses lightweight tools. Each tool list includes what it does, why we use it, how to know it is working, and common fixes.
 
