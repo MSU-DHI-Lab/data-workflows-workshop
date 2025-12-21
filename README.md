@@ -140,63 +140,55 @@ Publishing is not just uploading a file. Publishing is making something usable b
 
 ## Your toolbox for this workshop
 
-I am calling this a toolbox on purpose. These are not “one special workflow” tools. These are general-purpose tools that show up across the broader data science and analytics world, and they are useful whenever you run into a new data challenge.
+These tools are intentionally portable and affordable. Each quick-start shows how to get them running with no guessing.
 
-We also avoid expensive, proprietary platforms here. The point is portability. You should be able to use these tools on different machines, in different institutions, and in different contexts.
+### OpenRefine: How to get it and run it
+- What it is: A point-and-click tool for cleaning messy tabular data and metadata.
+- How you use it in this workshop: Facet, clean, and export a replayable operations file.
+- How you access it: Install on your computer (desktop app launched locally).
+- Get it here: https://openrefine.org/download.html
+- Open it like this: Download the ZIP or tarball for your system, unzip, then run `refine` (macOS/Linux script) or `openrefine.exe` (Windows). When it starts, your browser opens to `http://127.0.0.1:3333`.
+- Quick check: You should see the OpenRefine home screen in your browser at `http://127.0.0.1:3333`.
 
-### OpenRefine
-What it is:
-- A point-and-click tool for cleaning messy data, especially metadata
+### Apache NiFi: How to get it and run it
+- What it is: An open source visual tool for building and running data flows without code.
+- How you use it in this workshop: Move files through an inbox-to-outbox flow with routing and provenance.
+- How you access it: Runs in Docker using the provided Compose file.
+- Get it here: https://nifi.apache.org/download.html (Docker image pulled automatically by Docker Compose).
+- Open it like this: Install Docker Desktop or a Docker engine (https://www.docker.com/products/docker-desktop). In `day-02-repeatable-flows-and-provenance/01-labs/lab-01/`, run `docker compose up`. When logs show NiFi started, open `http://localhost:8080/nifi/`.
+- Quick check: You should see the NiFi canvas load in your browser and processors listed in the left panel.
 
-Why we use it:
-- It is fast to learn
-- It keeps a clear history of changes
-- It is excellent for making values consistent and untangling messy fields without writing code
+### Python and Google Colab: How to get it and run it
+- What it is: A language and notebook environment that runs locally or in the browser.
+- How you use it in this workshop: Profile data, run validation checks, and capture short reports.
+- How you access it: Browser (Colab) or local install.
+- Get it here: Python downloads at https://www.python.org/downloads/; Colab at https://colab.research.google.com.
+- Open it like this: For Colab, open the provided notebook links and choose “Run anyway” for install cells. For local, install Python 3.9 or newer, create a virtual environment, activate it, then open notebooks in your editor or run scripts with `python <file>.py`.
+- Quick check: `python --version` returns 3.9 or newer locally, and Colab notebooks run import cells without errors.
 
-### Apache NiFi
-What it is:
-- A visual way to move data through steps you can see
+### Pandera: How to get it and run it
+- What it is: A Python library for declarative data validation on pandas dataframes.
+- How you use it in this workshop: Define rules of trust and run them against cleaned datasets.
+- How you access it: Install inside your Python environment or Colab session.
+- Get it here: https://pypi.org/project/pandera/ (install with `pip install pandera[pandas]`).
+- Open it like this: In a notebook or terminal, run `pip install pandera[pandas]`, then `python -c \"import pandera; print(pandera.__version__)\"` to confirm. In Colab, run the install cell at the top of the provided notebook.
+- Quick check: The import command succeeds with no errors and your notebook cells proceed past the install.
 
-Why we use it:
-- You can build repeatable flows without writing “glue code”
-- It makes the process visible, which helps learning and auditing
-- It encourages good habits around provenance and routing (including quarantine paths)
+### Streamlit (open source): How to get it and run it
+- What it is: A lightweight Python framework for simple web apps.
+- How you use it in this workshop: Optional handoff app to show dataset and validation status.
+- How you access it: Install inside your Python environment.
+- Get it here: https://streamlit.io/
+- Open it like this: Install with `pip install streamlit` in `day-04-publishing-with-care/01-labs/lab-03/`, then run `streamlit run app.py`. Your browser opens to a local URL.
+- Quick check: A Streamlit page opens in your browser showing the handoff dashboard.
 
-### Python and Google Colab
-What it is:
-- A way to run small scripts and notebooks in the browser
-
-Why we use it:
-- It reduces installation friction
-- It is widely used and transferable
-- It is ideal for transformations, checks, and documentation you can read like a narrative
-
-### Pandera
-What it is:
-- A Python library for data validation, where you write rules that define what is acceptable
-
-Why we use it:
-- It turns “we should check this” into a repeatable set of rules
-- It produces clear failures you can act on
-- It supports a mindset shift from ad hoc cleaning to explicit quality standards
-
-### Streamlit (open source)
-What it is:
-- A simple way to turn outputs into a small web interface
-
-Why we use it:
-- It helps colleagues review results without needing to run code
-- It turns validation from a private technical step into a shared decision-making step
-- It is a practical bridge between “code” and “team workflow”
-
-### Zenodo and DOIs (optional)
-What it is:
-- A publishing platform and persistent identifiers for datasets
-
-Why we use it:
-- It gives your work a stable, citable home
-- It supports versioning and attribution
-- It encourages responsible publishing habits, including documentation and licensing
+### Zenodo and DOIs (optional): How to get it and run it
+- What it is: A free publishing platform that mints persistent identifiers for datasets and research outputs.
+- How you use it in this workshop: Prepare `.zenodo.json` metadata and, if desired, create a draft deposit.
+- How you access it: Web-based.
+- Get it here: https://zenodo.org/
+- Open it like this: Create or sign in to a Zenodo account in your browser, then use the upload form to start a draft. For practice, fill in `.zenodo.json` locally without uploading.
+- Quick check: You can view or edit a draft record in Zenodo or validate that `.zenodo.json` contains the required fields locally.
 
 ## Pace and expectations
 

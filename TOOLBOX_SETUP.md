@@ -6,60 +6,79 @@ This workshop uses lightweight tools. Each tool list includes what it does, why 
 - Modern browser and stable internet (for Colab and Zenodo practice).
 - Python 3.9 or newer available locally (`python3 --version`).
 - Git and a terminal (or built-in VS Code terminal) for running a few copy/paste commands.
+- Docker Desktop or a Docker engine for Day 02 flows (https://www.docker.com/products/docker-desktop).
 
 If you cannot install software locally (managed machines, restricted permissions), you can still run this workshop:
 - Use Colab for Python work.
 - Use the facilitator-run pathway for tools that require local installs (for example, NiFi via Docker). Learners can still interpret outputs, edit documentation, and complete the checks and packaging steps.
 
-## OpenRefine (Day 01)
-- What it does: desktop tool for interactive cleaning, faceting, and exporting an operations history.
-- Why we use it: fast pattern-spotting and reversible transforms before you automate anything. Tradeoff: not ideal for very large datasets.
-- Success looks like: reaching `http://127.0.0.1:3333` and seeing the OpenRefine UI.
-- Common problems and fixes: 
-  - Problem: UI will not load (Windows/macOS). Fix: restart OpenRefine; ensure no other app is using address 3333.
-  - Problem: memory errors on large files. Fix: split the file or increase OpenRefine memory settings in the OpenRefine config.
-
-## Apache NiFi in Docker (Day 02)
-- What it does: visual, step-by-step flows with routing and a visible run record (a trace of what happened).
-- Why we use it: lets you draw a repeatable file-moving flow with visible history. Tradeoff: needs Docker and a free browser address at `http://localhost:8080/`.
-- Success looks like: `docker compose up` in `day-02-repeatable-flows-and-provenance/01-labs/lab-01/` followed by reaching `http://localhost:8080/nifi/`.
+### OpenRefine: How to get it and run it
+- What it is: Desktop tool for interactive cleaning, faceting, and exporting an operations history.
+- How you use it in this workshop: Clean the Day 01 dataset and export an operations file others can replay.
+- How you access it: Install on your computer (launches locally, uses your browser).
+- Get it here: https://openrefine.org/download.html
+- Open it like this: Download the ZIP or tarball, unzip, then run `refine` (macOS/Linux) or `openrefine.exe` (Windows). Your browser opens to `http://127.0.0.1:3333`.
+- Quick check: You should see the OpenRefine home screen at `http://127.0.0.1:3333`.
 - Common problems and fixes:
-  - Problem: NiFi will not start. Fix: check Docker is running; make sure nothing else is using address 8080 (`lsof -i :8080` on macOS/Linux, `netstat -ano | find "8080"` on Windows); rerun `docker compose up`.
-  - Problem: cannot export flow. Fix: use the canvas right-click or top-right menu to download flow definition.
-  - Plan B if Docker is blocked: facilitator runs NiFi and screen-shares the flow while learners review the blueprint and outputs.
+  - UI will not load: restart OpenRefine and make sure nothing else uses port 3333.
+  - Memory errors on large files: split the file or increase OpenRefine memory settings in its config.
 
-## Python + Colab (Day 03)
-- What it does: runs notebooks for profiling and validation.
-- Why we use it: no local setup in Colab; easy to read code and outputs. Tradeoff: needs internet if using Colab.
-- Success looks like: notebooks run cells without import errors after `pip install pandera[pandas]`.
+### Apache NiFi in Docker: How to get it and run it
+- What it is: Visual, step-by-step flows with routing and a visible run record.
+- How you use it in this workshop: Build the Day 02 inbox-to-outbox flow with quarantine and provenance.
+- How you access it: Runs in Docker via the provided Compose file.
+- Get it here: Docker pulls the `apache/nifi` image automatically; Docker Desktop download: https://www.docker.com/products/docker-desktop
+- Open it like this: In `day-02-repeatable-flows-and-provenance/01-labs/lab-01/`, run `docker compose up`. Wait for logs to show NiFi started, then open `http://localhost:8080/nifi/` in your browser.
+- Quick check: NiFi canvas loads and shows processors in the left panel.
 - Common problems and fixes:
-  - Problem: pandas or pandera not found. Fix: rerun the install cell; restart runtime if needed.
-  - Problem: file not found. Fix: ensure CSV is uploaded or paths point to repo files when running locally. Use Colab if local Python is restricted.
+  - NiFi will not start: check Docker is running; ensure nothing else uses port 8080 (`lsof -i :8080` on macOS/Linux, `netstat -ano | find \"8080\"` on Windows); rerun `docker compose up`.
+  - Cannot export flow: use the canvas right-click or top-right menu to download the flow definition.
+  - Plan B if Docker is blocked: facilitator runs NiFi and screen-shares while learners review the blueprint and outputs.
 
-## Pandera (Day 03)
-- What it does: declarative data validation for pandas dataframes.
-- Why we use it: readable rules of trust next to the data. Tradeoff: Python-only; needs pandas.
-- Success looks like: running the validation function returns your table when it passes, or prints a clear list of what failed.
+### Python + Colab: How to get it and run it
+- What it is: Notebook and scripting environment for profiling and validation.
+- How you use it in this workshop: Run Day 01 and Day 03 notebooks to check cleaned data and validation rules.
+- How you access it: Browser (Colab) or local install.
+- Get it here: Python downloads at https://www.python.org/downloads/; Colab at https://colab.research.google.com.
+- Open it like this: For Colab, open the lab notebook links and run the install cell. For local, install Python 3.9+, create and activate a virtual environment, install dependencies with `pip install -r requirements.txt` if provided or `pip install pandera[pandas]`, then run notebooks or scripts from the lab folder.
+- Quick check: `python --version` shows 3.9 or newer locally, and the first import cell in Colab runs without errors.
 - Common problems and fixes:
-  - Problem: validation stops after one error. Fix: use `lazy=True` to see all failures.
-  - Problem: type errors. Fix: set `coerce=True` in columns or cast types before validation.
+  - pandas or pandera not found: rerun the install cell; restart runtime if needed.
+  - File not found: ensure CSV is uploaded or paths point to repo files; in Colab, re-upload the file each session.
 
-## Streamlit (Day 04 optional)
-- What it does: builds a simple web app to share a data view without heavy setup.
-- Why we use it: quick handoff for browsing data and quality status. Tradeoff: local install required if not using Colab.
-- Success looks like: `streamlit run app.py` in `day-04-publishing-with-care/01-labs/lab-03/` opens a local URL with the dashboard.
+### Pandera: How to get it and run it
+- What it is: Declarative data validation for pandas dataframes.
+- How you use it in this workshop: Write Day 03 validation schemas and run them on clean and intentionally bad data.
+- How you access it: Install inside your Python environment or Colab session.
+- Get it here: https://pypi.org/project/pandera/ (install with `pip install pandera[pandas]`).
+- Open it like this: After installing, run `python -c \"import pandera\"` or import in a notebook to confirm. Use the provided schema examples in the labs.
+- Quick check: Pandera imports with no errors and validation functions run.
 - Common problems and fixes:
-  - Problem: module not found. Fix: run `pip install streamlit`.
-  - Problem: file path errors. Fix: run the app from `lab-03/` so relative paths resolve.
+  - Validation stops after one error: use `lazy=True` to see all failures.
+  - Type errors: set `coerce=True` in columns or cast types before validation.
 
-## Zenodo / DOIs (Day 04)
-- What it does: hosts datasets and can mint DOIs for citation.
-- Why we use it: provides a persistent identifier and landing page for the package. Tradeoff: live deposit requires an account; size limits apply.
-- Success looks like: the Zenodo metadata file (named `.zenodo.json`) is filled in, LICENSE and CITATION.cff agree on title/version/license, and (optionally) a Zenodo draft or DOI is created.
+### Streamlit (Day 04 optional): How to get it and run it
+- What it is: Builds a simple web app to share a data view without heavy setup.
+- How you use it in this workshop: Optional handoff app in Day 04 Lab 03 to preview package contents.
+- How you access it: Install in your Python environment.
+- Get it here: https://streamlit.io/
+- Open it like this: In `day-04-publishing-with-care/01-labs/lab-03/`, run `pip install streamlit` then `streamlit run app.py`. Your browser opens to a local URL.
+- Quick check: The Streamlit dashboard opens in your browser and shows the handoff view.
 - Common problems and fixes:
-  - Problem: metadata rejected. Fix: ensure required fields (title, creators, description, license, version) are filled.
-  - Problem: size limits. Fix: compress or split files; describe large external files in README.
-  - Problem: license mismatch. Fix: align LICENSE, README, CITATION.cff, and .zenodo.json.
+  - Module not found: run `pip install streamlit`.
+  - File path errors: run the app from `lab-03/` so relative paths resolve.
+
+### Zenodo / DOIs (Day 04): How to get it and run it
+- What it is: Hosts datasets and can mint DOIs for citation.
+- How you use it in this workshop: Fill `.zenodo.json`, align it with README, LICENSE, and CITATION.cff, and optionally create a draft deposit.
+- How you access it: Web-based.
+- Get it here: https://zenodo.org/
+- Open it like this: Sign in or create an account, click Upload, and start a new upload. For practice, complete `.zenodo.json` locally without uploading.
+- Quick check: You can view or edit a draft record in Zenodo, or validate `.zenodo.json` locally with required fields present.
+- Common problems and fixes:
+  - Metadata rejected: ensure required fields (title, creators, description, license, version) are filled.
+  - Size limits: compress or split files; describe large external files in README.
+  - License mismatch: align LICENSE, README, CITATION.cff, and `.zenodo.json`.
   - Plan B if accounts are restricted: complete the practice path locally, keep the bundle in `05-artifacts/`, and include a note for future deposit.
 
 ## What success looks like overall

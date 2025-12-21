@@ -14,6 +14,54 @@ This repository is a four-part workshop-in-a-box for cultural heritage practitio
 - If you will run everything locally: OpenRefine and Python 3.9+.
 - If you will run Day 02 locally: Docker access for NiFi.
 
+### OpenRefine: How to get it and run it
+- What it is: Desktop tool for faceting and cleaning tabular data.
+- How you use it in this workshop: Clean Day 01 data and export an operations file.
+- How you access it: Install on your computer; opens in your browser locally.
+- Get it here: https://openrefine.org/download.html
+- Open it like this: Download, unzip, run `refine` (macOS/Linux) or `openrefine.exe` (Windows). Browser opens `http://127.0.0.1:3333`.
+- Quick check: OpenRefine home screen appears at `http://127.0.0.1:3333`.
+
+### Apache NiFi (Docker): How to get it and run it
+- What it is: Visual flow tool with routing and provenance.
+- How you use it in this workshop: Day 02 inbox-to-outbox flow with quarantine.
+- How you access it: Runs in Docker via the provided Compose file.
+- Get it here: Docker Desktop at https://www.docker.com/products/docker-desktop (pulls `apache/nifi` automatically).
+- Open it like this: From `day-02-repeatable-flows-and-provenance/01-labs/lab-01/`, run `docker compose up`, then open `http://localhost:8080/nifi/`.
+- Quick check: NiFi canvas loads in the browser and shows processors to drag.
+
+### Python and Google Colab: How to get it and run it
+- What it is: Language and notebook environment running locally or in the browser.
+- How you use it in this workshop: Day 01 and Day 03 validation and profiling.
+- How you access it: Browser (Colab) or local install.
+- Get it here: Python at https://www.python.org/downloads/; Colab at https://colab.research.google.com.
+- Open it like this: For Colab, open the notebook links and run the install cell. For local, install Python 3.9+, create a virtual environment, install dependencies with `pip install pandera[pandas]`, then run notebooks from the lab folder.
+- Quick check: `python --version` shows 3.9 or newer locally; Colab import cells run without errors.
+
+### Pandera: How to get it and run it
+- What it is: Python library for declarative data validation on pandas dataframes.
+- How you use it in this workshop: Define and run rules in Day 03 labs.
+- How you access it: Install in your Python environment or Colab session.
+- Get it here: https://pypi.org/project/pandera/ (install with `pip install pandera[pandas]`).
+- Open it like this: Import Pandera in the notebook and load the schema file. Run validation cells.
+- Quick check: Imports succeed and validation outputs appear without errors.
+
+### Streamlit (optional): How to get it and run it
+- What it is: Lightweight Python framework for small web apps.
+- How you use it in this workshop: Optional Day 04 handoff app.
+- How you access it: Install in your Python environment.
+- Get it here: https://streamlit.io/
+- Open it like this: In `day-04-publishing-with-care/01-labs/lab-03/`, run `pip install streamlit` then `streamlit run app.py`. Browser opens to a local URL.
+- Quick check: Streamlit dashboard opens and shows the handoff view.
+
+### Zenodo (optional): How to get it and run it
+- What it is: Free hosting with persistent identifiers (DOIs).
+- How you use it in this workshop: Prepare `.zenodo.json` and, if desired, create a draft deposit.
+- How you access it: Web-based.
+- Get it here: https://zenodo.org/
+- Open it like this: Sign in, start a new upload, or complete `.zenodo.json` locally for practice.
+- Quick check: A draft record is viewable in Zenodo or your `.zenodo.json` validates locally.
+
 For setup and fallbacks, use `TOOLBOX_SETUP.md`.
 
 ## Session structure (60 to 90 minutes)
@@ -82,4 +130,3 @@ A participant has completed the workshop when they can:
 - Produce the day outputs.
 - Explain, in plain language, what changed and why.
 - Point to evidence that supports trust and reuse (OpenRefine operations file, notes on what changed, validation report, licensing and citation artifacts).
-
