@@ -8,7 +8,7 @@ Profiling is sometimes called "exploratory data analysis" or EDA. The idea is si
 
 **Outputs:** Notes on shape, missingness, and allowed lists (save in `05-artifacts/` if you like)
 
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/watrall/data-workflows-workshop/blob/main/day-03-quality-gates-and-reuse/01-labs/lab-01/notebooks/lab01_profile.ipynb)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/MSU-DHI-Lab/data-workflows-workshop/blob/main/day-03-quality-gates-and-reuse/01-labs/lab-01/notebooks/lab01_profile.ipynb)
 
 ## Before You Start
 

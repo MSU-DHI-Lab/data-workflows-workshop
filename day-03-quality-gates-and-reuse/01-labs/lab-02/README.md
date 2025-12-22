@@ -8,7 +8,7 @@ The goal of this lab is to codify 6-10 checks as Pandera validation rules, run t
 - Validation run confirming the data passes
 - Rules saved to `artifacts/validation_schema.py`
 
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/watrall/data-workflows-workshop/blob/main/day-03-quality-gates-and-reuse/01-labs/lab-02/notebooks/lab02_pandera.ipynb)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/MSU-DHI-Lab/data-workflows-workshop/blob/main/day-03-quality-gates-and-reuse/01-labs/lab-02/notebooks/lab02_pandera.ipynb)
 
 ## Before You Start
 

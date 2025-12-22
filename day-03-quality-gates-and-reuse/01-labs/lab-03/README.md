@@ -10,7 +10,7 @@ The goal of this lab is to run your Pandera validation rules against a dataset w
 - `validation_report.md` in this lab folder
 - Notes on what you would do next (fix data, adjust checks, or quarantine)
 
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/watrall/data-workflows-workshop/blob/main/day-03-quality-gates-and-reuse/01-labs/lab-03/notebooks/lab03_report.ipynb)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/MSU-DHI-Lab/data-workflows-workshop/blob/main/day-03-quality-gates-and-reuse/01-labs/lab-03/notebooks/lab03_report.ipynb)
 
 ## Before You Start
 

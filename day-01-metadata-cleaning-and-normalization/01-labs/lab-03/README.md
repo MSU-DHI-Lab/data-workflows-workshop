@@ -8,7 +8,7 @@ This takes about 20 minutes.
 
 **Outputs:** Validation summary (copy into `05-artifacts/` or your notes)
 
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/watrall/data-workflows-workshop/blob/main/day-01-metadata-cleaning-and-normalization/01-labs/lab-03/notebooks/day01_validation.ipynb)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/MSU-DHI-Lab/data-workflows-workshop/blob/main/day-01-metadata-cleaning-and-normalization/01-labs/lab-03/notebooks/day01_validation.ipynb)
 
 ## Why Validate Right After Cleaning
 
