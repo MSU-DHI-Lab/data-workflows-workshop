@@ -78,9 +78,11 @@ If you included the validation report, find the "Data Quality Status" section an
 
 ## Step 6: Stop the App
 
-When you are finished exploring, go back to your terminal and press Ctrl+C.
+When you are finished exploring, go back to your terminal and press **Ctrl+C** (hold the Control key and press C).
 
-The server stops and your terminal prompt returns.
+> **Note:** In a terminal, Ctrl+C means "stop the running program" — it is NOT copy/paste like in other applications.
+
+The server stops and your terminal prompt returns (the blinking cursor waiting for your next command).
 
 ---
 

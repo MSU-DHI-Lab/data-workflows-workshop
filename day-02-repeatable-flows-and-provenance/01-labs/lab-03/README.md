@@ -85,13 +85,17 @@ This narrative captures the story in plain language. The provenance graph is evi
 
 ## Step 6: Stop NiFi
 
-When you are finished, go to your terminal and press Ctrl+C to stop NiFi. Then run:
+When you are finished, go to your terminal and press **Ctrl+C** (hold the Control key and press C) to stop NiFi.
+
+> **Note:** In a terminal, Ctrl+C means "stop the running program" — it is NOT copy/paste like in other applications.
+
+Then run:
 
 ```
 docker compose down
 ```
 
-This shuts down the containers cleanly and frees resources.
+This command tells Docker to shut down the NiFi container and free up the resources it was using on your computer.
 
 ---
 
@@ -118,4 +122,4 @@ If all four are checked, you have completed Day 02.
 
 **Cannot find the View provenance option:** Right-click on different parts of the canvas. Some NiFi versions put the option on queues, some on processors. You can also access global provenance from the menu bar.
 
-**Docker will not stop:** If Ctrl+C does not work, open another terminal and run `docker compose down` in the lab folder. As a last resort, use Docker Desktop to stop the containers manually.
+**NiFi will not stop:** If Ctrl+C does not work, open another terminal, navigate to the lab-01 folder, and run `docker compose down`. As a last resort, open Docker Desktop and click the stop button on the NiFi container.

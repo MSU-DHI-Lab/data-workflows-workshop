@@ -30,13 +30,17 @@ Python is a programming language, and Colab is a free browser-based notebook env
 
 **Colab path (recommended if you are new to Python):** Open the notebook links in the labs and run the install cell. No local setup needed.
 
-**Local path:** Install Python 3.9 or newer from https://www.python.org/downloads/, create a virtual environment, then run `pip install pandera[pandas]`.
+**Local path:** Install Python 3.9 or newer from https://www.python.org/downloads/, create a virtual environment (see [TOOLBOX_SETUP.md](../TOOLBOX_SETUP.md) for step-by-step instructions), then run `pip install pandera[pandas]`.
 
 ### Pandera
 
-Pandera is a Python library for declarative data validation. "Declarative" means you describe what the data should look like, and Pandera checks whether it matches. Instead of writing lots of if-statements scattered through your code, you define your rules in one place.
+Pandera is a Python library for data validation. "Validation" means checking whether your data follows the rules you expect. Instead of manually inspecting spreadsheets, you write rules once and let Pandera check them automatically.
 
-Think of Pandera like a checklist that runs automatically. You say "the rights column must contain only these three values" and Pandera tells you which rows break that rule.
+Think of Pandera like a checklist that runs by itself. You say "the rights column must contain only these three values" and Pandera tells you exactly which rows break that rule.
+
+**Key terms:**
+- **pandas**: A Python library for working with tabular data. It loads your CSV into a structure called a "DataFrame" (like a spreadsheet in Python).
+- **Schema**: The set of rules you define for your data. For example: "this column must not be empty" or "dates must be in YYYY-MM-DD format."
 
 **How to get it running:**
 
@@ -44,7 +48,7 @@ Think of Pandera like a checklist that runs automatically. You say "the rights c
 2. In your notebook, run `import pandera as pa` to load the library
 3. Use the provided schema examples in Lab 02 as a starting point
 
-You should see the import succeed without errors. If you see a ModuleNotFoundError, rerun the install command and restart your notebook kernel.
+You should see the import succeed without errors. If you see a ModuleNotFoundError, rerun the install command and restart your notebook kernel (in Colab: Runtime > Restart runtime).
 
 Both tools are open or low-cost, widely used, and worth keeping in your toolbox for any future data project.
 

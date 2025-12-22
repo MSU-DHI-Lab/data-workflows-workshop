@@ -28,7 +28,13 @@ Day 02 is where you make process repeatable and visible. Moving files by hand hi
 
 NiFi is a visual tool for building and running data flows without writing code. You drag boxes (called processors) onto a canvas and connect them to show how files move. NiFi keeps a detailed run record called "provenance" that shows exactly what happened to each file.
 
-A **container** is a lightweight, isolated environment that runs software with all its dependencies bundled together. Think of it as a shipping container for software: everything the program needs is packed inside, so it runs the same way on any computer. Docker is the tool that creates and runs these containers.
+NiFi is powerful software, but installing it directly on your computer would require many steps. Instead, we use **Docker** to run NiFi inside a **container**.
+
+Think of a container like a shipping container for software. Everything the program needs is packed inside: the software itself, its settings, and all its supporting files. When you run a container, it works the same way on any computer. You do not need to install NiFi piece by piece because the container already has everything set up.
+
+**Docker** is the free program that creates and runs these containers. You install Docker Desktop once, and then it can run any containerized software. Docker handles all the technical details behind the scenes.
+
+**Why this matters for you:** You do not need to become a Docker expert. You will run two simple commands, and Docker will handle everything else. If something goes wrong, the troubleshooting steps are straightforward.
 
 **How to get NiFi running:**
 
@@ -44,9 +50,11 @@ This is your first time running NiFi, so do not worry if it takes a moment to lo
 
 ### Docker Compose
 
-Docker Compose is a tool that starts containers with predictable settings from a simple configuration file. The `docker-compose.yml` file in Lab 01 tells Docker exactly how to run NiFi so everyone gets the same setup.
+Docker Compose is a helper tool that reads a recipe file and starts containers with the right settings. The recipe file is called `docker-compose.yml`, and you will find one in the Lab 01 folder.
 
-**Why this matters:** You do not need to configure NiFi manually. The compose file handles ports, folders, and settings. You just run one command and the environment is ready.
+The recipe file tells Docker: "Run NiFi, give it access to these folders on my computer, and make it available at this web address." Without Docker Compose, you would have to type a long command with many options. With Docker Compose, you just run `docker compose up` and the recipe handles everything.
+
+**Why this matters:** You do not need to configure NiFi manually. The recipe file handles ports, folders, and settings. Everyone who runs the same recipe gets the same setup.
 
 These tools stay in your toolbox after the workshop because they are open, widely adopted, and good for any team that needs traceable file movement.
 

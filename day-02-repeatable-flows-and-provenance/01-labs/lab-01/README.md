@@ -1,8 +1,10 @@
 # Lab 01: Run NiFi Locally and Orient
 
-The goal of this lab is to start NiFi in Docker, load the UI, and learn what the main boxes and queues do. This takes about 15 minutes.
+The goal of this lab is to start NiFi, load the interface in your browser, and learn what the main boxes and queues do. This takes about 15 minutes.
 
-**Inputs:** `docker-compose.yml` (a configuration file in this lab folder that tells Docker how to run NiFi)
+NiFi runs inside Docker, which is a program that packages software so it works the same way on any computer. You do not need to understand Docker deeply. You will run a few commands, and Docker will handle the rest.
+
+**Inputs:** `docker-compose.yml` (a recipe file in this lab folder that tells Docker how to run NiFi)
 
 **Outputs:** NiFi running at `http://localhost:8080/nifi/`
 
@@ -14,29 +16,44 @@ If you cannot run Docker on your machine (managed computer, restricted permissio
 
 ---
 
-## Step 1: Confirm Docker Is Running
+## Step 1: Confirm Docker Desktop Is Running
 
-Open Docker Desktop (or check your Docker engine) and make sure it is running. You should see the Docker whale icon in your menu bar or system tray.
+Docker Desktop is a free program that runs containers (self-contained software packages) on your computer. You need it running before you can start NiFi.
 
-If Docker is not installed, download it from https://www.docker.com/products/docker-desktop and follow the installation steps. You may need to restart your computer.
+Open Docker Desktop from your Applications folder (macOS) or Start menu (Windows). Once it opens, you should see the Docker whale icon in your menu bar (macOS) or system tray (Windows). The icon means Docker is running and ready.
+
+If Docker is not installed, download it from https://www.docker.com/products/docker-desktop and follow the installation steps. The installer is straightforward. You may need to restart your computer after installing.
 
 ---
 
 ## Step 2: Open a Terminal in This Lab Folder
 
-Open a terminal (Terminal on macOS, Command Prompt or PowerShell on Windows, or the built-in terminal in VS Code) and navigate to this folder:
+A terminal is a text-based way to talk to your computer. Instead of clicking icons, you type commands.
+
+**Where to find a terminal:**
+- **macOS**: Open the "Terminal" app (in Applications > Utilities, or search for "Terminal")
+- **Windows**: Open "Command Prompt" or "PowerShell" (search in the Start menu)
+- **VS Code**: View menu > Terminal (or press Ctrl+` on Windows, Cmd+` on Mac)
+
+Once your terminal is open, you need to navigate to this lab folder. The command `cd` means "change directory" — it is like double-clicking a folder to go inside it.
+
+Type this command (adjust the path if you downloaded the workshop to a different location):
 
 ```
-cd day-02-repeatable-flows-and-provenance/01-labs/lab-01
+cd Documents/data-workflows-workshop/day-02-repeatable-flows-and-provenance/01-labs/lab-01
 ```
 
-You should see the `docker-compose.yml` file when you list the directory contents (`ls` on macOS/Linux, `dir` on Windows).
+**How to verify you are in the right place:**
+- On macOS/Linux, type `ls` and press Enter
+- On Windows, type `dir` and press Enter
 
-If you see "file not found" errors, check your path. You need to be inside the `lab-01` folder.
+You should see a file called `docker-compose.yml` in the list. This is the recipe file that tells Docker how to run NiFi.
+
+If you see "file not found" or "No such file or directory" errors, you are not in the right folder. Double-check the path and try again. You need to be inside the `lab-01` folder.
 
 ---
 
-## Step 3: Start NiFi with Docker Compose
+## Step 3: Start NiFi
 
 Run this command:
 
@@ -46,11 +63,18 @@ docker compose up
 
 (On older Docker versions, you may need `docker-compose up` with a hyphen.)
 
-Docker will pull the Apache NiFi image if this is your first time. That download can take a few minutes depending on your internet speed. After that, you will see logs scrolling in your terminal as NiFi starts up.
+**What happens when you run this command:**
 
-Wait until you see messages about processors being available or the web server starting. This can take 1-2 minutes even after the download finishes. The logs may look dense and technical. That is normal. Look for lines mentioning "Started" or "NiFi has started."
+1. Docker reads the recipe file (`docker-compose.yml`) in this folder
+2. Docker downloads the NiFi software package (called an "image") if this is your first time. This download can take a few minutes depending on your internet speed.
+3. Docker creates a container from that package and starts NiFi inside it
+4. NiFi becomes available in your web browser
 
-If the command fails, check that Docker is running. Also check that nothing else is using port 8080 on your machine. On macOS/Linux, run `lsof -i :8080` to see what is using the port. On Windows, run `netstat -ano | find "8080"`.
+You will see logs scrolling in your terminal as NiFi starts up. The logs may look dense and technical. That is normal. Look for lines mentioning "Started" or "NiFi has started." This can take 1-2 minutes even after the download finishes.
+
+If the command fails, check that Docker Desktop is running (look for the whale icon). Also check that nothing else is using port 8080 on your machine. On macOS/Linux, run `lsof -i :8080` to see what is using the port. On Windows, run `netstat -ano | find "8080"`.
+
+**What is a port?** A port is like a numbered door on your computer. When NiFi runs, it listens on door 8080 for your browser to knock. If another program is already using door 8080, NiFi cannot open it.
 
 ---
 
@@ -74,11 +98,13 @@ If the page does not load, wait another minute and refresh. NiFi takes a little 
 
 ## Step 5: Confirm Folders for Lab 02 Exist
 
-NiFi needs folders to watch. The docker-compose file maps three folders inside the `lab-02/` folder (next door to this one) into the NiFi container:
+NiFi runs inside a container, which is like a sealed box. By default, NiFi cannot see files on your computer. The recipe file (`docker-compose.yml`) creates small windows between the container and your computer so NiFi can read from and write to specific folders.
 
-- `inputs/` (where files go in)
-- `outputs/` (where clean files land)
-- `quarantine/` (where questionable files are held)
+These "windows" connect three folders inside `lab-02/` (next door to this lab folder) to NiFi:
+
+- `inputs/` (where you put files for NiFi to pick up)
+- `outputs/` (where NiFi puts clean files)
+- `quarantine/` (where NiFi puts questionable files)
 
 Open `lab-02/` in your file browser or terminal. If these folders do not exist, create them now. NiFi cannot write to folders that do not exist on your machine.
 
@@ -104,9 +130,11 @@ You should see `intake_sample.csv` inside `lab-02/inputs/`. This CSV is the data
 
 ## Step 7: Stop NiFi When Finished Exploring
 
-When you are done looking around the NiFi UI, go back to your terminal and press Ctrl+C to stop the container.
+When you are done looking around the NiFi UI, go back to your terminal and press **Ctrl+C** (hold the Control key and press C) to stop NiFi.
 
-You should see Docker logs stop and your terminal prompt return.
+> **Note:** In a terminal, Ctrl+C means "stop the running program" — it is NOT copy/paste like in other applications.
+
+You should see the logs stop and your terminal prompt return (the blinking cursor waiting for your next command).
 
 If the container does not stop cleanly, run `docker compose down` in the same directory to force a shutdown.
 

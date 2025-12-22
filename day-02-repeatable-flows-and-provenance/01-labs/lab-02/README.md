@@ -47,7 +47,7 @@ Click Apply, then OK.
 
 The GetFile processor watches a folder and picks up any files that appear. Setting Keep Source File to false means it removes the file after picking it up, preventing duplicate processing.
 
-If the processor shows an error icon, check that you filled in the required fields. The Input Directory path must match the Docker volume mount.
+If the processor shows an error icon, check that you filled in the required fields. The Input Directory path `/opt/nifi/inputs` is where NiFi looks for files inside the container. The recipe file connects this path to the `inputs/` folder on your computer.
 
 ---
 
@@ -208,7 +208,7 @@ If all four are checked, you are ready for Lab 03.
 
 **Files not moving:** Check that all processors are started (green play icon). Look for backpressure warnings on queues. Check the bulletin board (bell icon, top right) for error messages.
 
-**Files land in the wrong folder:** Verify the directory paths in PutFile match `/opt/nifi/outputs` and `/opt/nifi/quarantine`. These are paths inside the Docker container, not on your local machine.
+**Files land in the wrong folder:** Verify the directory paths in PutFile match `/opt/nifi/outputs` and `/opt/nifi/quarantine`. These paths are where NiFi sees the folders inside its container. The recipe file connects these paths to the actual folders on your computer (`lab-02/outputs/` and `lab-02/quarantine/`).
 
 **Regex not matching:** Test your regex with a simple pattern first. Check for missing parentheses or vertical bars. The case-insensitive flag `(?i)` should be at the start.
 

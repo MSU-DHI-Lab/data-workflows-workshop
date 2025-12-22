@@ -41,9 +41,15 @@ You should see the OpenRefine home screen. If the page does not load, check that
 
 Python is a programming language, and Colab is a free browser-based notebook environment from Google that lets you run Python without installing anything. You will use these for quick validation checks on cleaned data.
 
+**What is a notebook?** A notebook is a document that mixes text explanations with runnable code. The code lives in "cells" — small boxes you click and run one at a time. Results appear directly below each cell. This makes it easy to follow along step by step.
+
 **Colab path (recommended if you are new to Python):** Open the notebook link in [Lab 03](01-labs/lab-03/README.md) and run the install cell. No local setup needed.
 
 **Local path:** Install Python 3.9 or newer from https://www.python.org/downloads/, create a virtual environment, then run `pip install pandera[pandas]`.
+
+> **New to these terms?**
+> - **pip** is a tool that downloads and installs Python add-ons (called "packages" or "libraries"). The command `pip install pandera[pandas]` tells pip to download Pandera and its dependencies.
+> - A **virtual environment** is an isolated workspace for Python. It keeps the packages you install for this workshop separate from other Python projects on your computer. This prevents conflicts. See [TOOLBOX_SETUP.md](../TOOLBOX_SETUP.md) for step-by-step instructions.
 
 ### Pandera
 
@@ -65,7 +71,7 @@ Before you begin the labs:
 
 - **OpenRefine page will not load:** Stop anything using port 3333, then relaunch OpenRefine
 - **Memory errors with large files:** Split the file or increase the OpenRefine memory setting in its configuration file
-- **Python import errors:** Rerun the install command, restart the notebook kernel, and confirm you are in the right environment
+- **Python import errors:** Rerun the install command, restart the notebook kernel (the "kernel" is the engine running your code — in Colab, click Runtime > Restart runtime), and confirm you are in the right environment
 - **File not found in validation:** Make sure you run notebooks from the `day-01-metadata-cleaning-and-normalization` folder, or upload the CSV in Colab
 
 If you cannot install software locally, use the Colab path for validation. You can also review the provided OpenRefine screenshots and operations file in [troubleshooting.md](02-job-aids/troubleshooting.md) to see expected steps and outputs.
