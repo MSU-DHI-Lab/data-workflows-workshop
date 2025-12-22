@@ -16,6 +16,6 @@
 - **Apache NiFi**: visual tool for building and running step-by-step flows with provenance and routing.
 - **Pandera**: Python library for declarative data validation on pandas dataframes.
 - **Streamlit (open source)**: Python framework to create simple web apps for sharing data views without heavy setup.
-- **Zenodo**: repository service that can mint DOIs for datasets and related artifacts.
+- **Zenodo**: repository service that can mint DOIs for datasets and related files.
 - **CITATION.cff**: citation file format describing how to reference a dataset or code package.
 - **Rights token**: short statement describing reuse conditions (for example, Public Domain, CC BY 4.0).

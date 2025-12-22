@@ -1,6 +1,6 @@
 # Lab 02: Licensing, Citation, and Zenodo Metadata
 
-The goal of this lab is to prepare legal and descriptive artifacts for publishing. You will choose a license, fill out citation details, and prepare Zenodo metadata. Optionally, you can deposit to Zenodo and mint a DOI.
+The goal of this lab is to prepare legal and descriptive files for publishing. You will choose a license, fill out citation details, and prepare Zenodo metadata. Optionally, you can deposit to Zenodo and mint a DOI.
 
 This takes about 30 minutes.
 
@@ -22,7 +22,9 @@ Take your time with this lab. The files you create will outlive the project.
 
 ## Step 1: Choose and Confirm Your License
 
-Open `artifacts/LICENSE` and review the contents.
+The `deliverables/` folder in this lab contains template files you will customize. These files will eventually go into your dataset package or stay alongside it for reference.
+
+Open `deliverables/LICENSE` and review the contents.
 
 A common choice for data is **CC BY 4.0** (Creative Commons Attribution 4.0). This allows others to share and adapt your data as long as they give credit.
 
@@ -36,7 +38,7 @@ Make sure the license you put in this file matches what you say in the README, C
 
 ## Step 2: Update CITATION.cff
 
-Open `artifacts/CITATION.cff` and fill in the details.
+Open `deliverables/CITATION.cff` and fill in the details.
 
 CITATION.cff is a YAML file (YAML is a text format for structured data, similar to JSON but more human-readable). It tells tools and people how to cite your work.
 
@@ -69,7 +71,7 @@ Save the file. If you see YAML errors, check indentation (use spaces, not tabs) 
 
 ## Step 3: Fill Out .zenodo.json
 
-Open `artifacts/.zenodo.json` and fill in the metadata.
+Open `deliverables/.zenodo.json` and fill in the metadata.
 
 This file tells Zenodo how to populate your deposit and DOI landing page. JSON (JavaScript Object Notation) is a structured text format. Each field has a name and a value.
 
@@ -125,7 +127,7 @@ Go through each item. If something is missing, go back and fix it.
 
 If you are not depositing to Zenodo, create a zip of the `dataset-package/` folder plus LICENSE, CITATION.cff, and .zenodo.json.
 
-Place the zip in `05-artifacts/`.
+Place the zip in `05-deliverables/`.
 
 This is your practice package. It is complete and ready to share even without a DOI.
 

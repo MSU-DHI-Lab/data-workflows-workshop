@@ -14,7 +14,7 @@ Mini case study: A repository cleans a set of oral history metadata. They bundle
 - Practice path: you bundle everything locally to rehearse without depositing.
 - Live path: you can deposit to Zenodo and mint a DOI if you have an account.
 ## What “successful understanding” looks like
-- You can list the required publishing artifacts (README, dictionary, license, citation, metadata, validation report).
+- You can list the required publishing files (README, dictionary, license, citation, metadata, validation report).
 - You can state reuse terms clearly and consistently.
 - You can record a DOI and version in README and CITATION.cff.
 - You can explain why publishing differs from sharing a file without context.
@@ -25,7 +25,7 @@ Mini case study: A repository cleans a set of oral history metadata. They bundle
 - Misconception: Practice runs are wasted time. Correction: Dry runs reduce mistakes before a public release.
 ## Practical decision guide
 - If you need a citable release, then prepare README, dictionary, LICENSE, CITATION.cff, validation report, and `.zenodo.json` (a structured text metadata file Zenodo can read).
-- If you have no Zenodo account or are not ready, then run the practice path and keep the bundle in `05-artifacts/`.
+- If you have no Zenodo account or are not ready, then run the practice path and keep the bundle in `05-deliverables/`.
 - If sensitive data exists, then redact before bundling and state redactions and rights in README.
 - If multiple asset types exist, then document each license and keep sensitive items separate.
 - If you update data, then version the package, update CITATION.cff and README, and note changes.

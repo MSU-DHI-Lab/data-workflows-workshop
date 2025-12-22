@@ -6,7 +6,7 @@ This takes about 20 minutes.
 
 **Inputs:** `../lab-02/outputs/collection_cleaned.csv`
 
-**Outputs:** Validation summary (copy into `05-artifacts/` or your notes)
+**Outputs:** Validation summary (copy into `05-deliverables/` or your notes)
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/MSU-DHI-Lab/data-workflows-workshop/blob/main/day-01-metadata-cleaning-and-normalization/01-labs/lab-03/notebooks/day01_validation.ipynb)
 
@@ -42,7 +42,7 @@ Colab sessions are temporary. If you close the browser or the session times out,
 
 ## Step 3: Load and Preview the Data
 
-Run the load-and-preview cell. It reads your CSV into a table and shows the first few rows.
+Run cell 2 (the cell under "Load the CSV and preview"). It reads your CSV into a table and shows the first few rows.
 
 You should see the first five rows with consistent `rights` and `place` values reflecting your Lab 02 cleanup.
 
@@ -52,7 +52,7 @@ If the data looks garbled, check that the file has headers and uses comma separa
 
 ## Step 4: Check Counts and Missing Values
 
-Run the counts/missing-values cell. It reports how many rows are in the file and whether any columns have blank values.
+Run cell 3 (under "Check counts and missing values"). It reports how many rows are in the file and whether any columns have blank values.
 
 You should see a row count (8 for the sample) and near-zero missing values. If your cleaned data has more rows, the count will be higher.
 
@@ -62,7 +62,7 @@ If the row count is lower than expected, compare against the original raw file. 
 
 ## Step 5: Check Distinct Values
 
-Run the distinct rights/place cell. It lists the unique values in those columns.
+Run cell 4 (under "Check distinct rights and place values"). It lists the unique values in those columns.
 
 You should see:
 - Rights limited to `CC BY 4.0`, `Public Domain`, `Rights Reserved`
@@ -74,9 +74,9 @@ If you see unexpected values, your cleaning may not have applied completely. Go 
 
 ## Step 6: Copy the Validation Summary
 
-Run the validation summary cell. It prints a short text block with row count, missing values, and distinct tokens.
+Run cell 5 (the final code cell, under "Validation summary"). It prints a short text block with row count, missing values, and distinct tokens.
 
-Copy this output into `05-artifacts/README.md` or your notes. This captures evidence for downstream teams and future reruns.
+Copy this output into `05-deliverables/README.md` or your notes. This captures evidence for downstream teams and future reruns.
 
 If the summary is empty, make sure the previous cells ran successfully. Rerun from the top of the notebook if needed.
 
@@ -89,7 +89,7 @@ Before moving on, confirm:
 - [ ] The notebook ran without errors
 - [ ] Row count matches your expected cleaned data
 - [ ] Distinct values for rights and place match your Lab 02 targets
-- [ ] You copied the validation summary to your artifacts
+- [ ] You copied the validation summary to your deliverables
 
 If all four are checked, you have completed Day 01.
 

@@ -46,9 +46,9 @@ docker compose up
 
 (On older Docker versions, you may need `docker-compose up` with a hyphen.)
 
-Docker will pull the Apache NiFi image if this is your first time. That download can take a few minutes. After that, you will see logs scrolling in your terminal as NiFi starts up.
+Docker will pull the Apache NiFi image if this is your first time. That download can take a few minutes depending on your internet speed. After that, you will see logs scrolling in your terminal as NiFi starts up.
 
-Wait until you see messages about processors being available or the web server starting. This can take 1-2 minutes even after the download finishes.
+Wait until you see messages about processors being available or the web server starting. This can take 1-2 minutes even after the download finishes. The logs may look dense and technical. That is normal. Look for lines mentioning "Started" or "NiFi has started."
 
 If the command fails, check that Docker is running. Also check that nothing else is using port 8080 on your machine. On macOS/Linux, run `lsof -i :8080` to see what is using the port. On Windows, run `netstat -ano | find "8080"`.
 
@@ -66,27 +66,39 @@ You may see a certificate warning. This is normal for local development. Accept 
 
 You should see the NiFi canvas: a large empty workspace with a toolbar on the left. The toolbar has icons for adding processors, input ports, output ports, and other components.
 
+This is your first time seeing NiFi. The interface can look overwhelming, but you only need a few features today. The canvas is where you drag and connect processors. The toolbar on the left lets you add things. The top-right area shows status. Do not worry about understanding everything right now.
+
 If the page does not load, wait another minute and refresh. NiFi takes a little while to fully start. If it still does not load, check your terminal for error messages.
 
 ---
 
-## Step 5: Create Folders for Lab 02
+## Step 5: Confirm Folders for Lab 02 Exist
 
-Before you build a flow, you need folders for the flow to watch. In the `lab-02/` folder (next door to this one), create three folders if they do not already exist:
+NiFi needs folders to watch. The docker-compose file maps three folders inside the `lab-02/` folder (next door to this one) into the NiFi container:
 
-- `inputs/`
-- `outputs/`
-- `quarantine/`
+- `inputs/` (where files go in)
+- `outputs/` (where clean files land)
+- `quarantine/` (where questionable files are held)
 
-These folders map to volume mounts that NiFi can access. The flow will pick up files from `inputs/`, process them, and write to `outputs/` or `quarantine/`.
+Open `lab-02/` in your file browser or terminal. If these folders do not exist, create them now. NiFi cannot write to folders that do not exist on your machine.
+
+You should see all three folders inside `lab-02/`. If any are missing, create them before continuing.
 
 ---
 
 ## Step 6: Seed the Inbox with a Sample File
 
-Copy the sample file `inputs/intake_sample.csv` from this lab folder into `../lab-02/inputs/`.
+Copy the sample file from this folder's `inputs/intake_sample.csv` into `lab-02/inputs/`.
 
-This CSV is the data your flow will process in Lab 02. Having it ready means you can test the flow as soon as you build it.
+In your terminal, from the `lab-01/` folder:
+
+```
+cp inputs/intake_sample.csv ../lab-02/inputs/
+```
+
+Or use your file browser to copy the file manually.
+
+You should see `intake_sample.csv` inside `lab-02/inputs/`. This CSV is the data your flow will process in Lab 02. Having it ready means you can test the flow as soon as you build it.
 
 ---
 

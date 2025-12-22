@@ -1,7 +1,7 @@
 # Primer Concepts
 
 ## What today is about
-You will package cleaned data with documentation, rights, and citation details so it can be reused and cited safely. The focus is publishing artifacts, careful reuse, and an optional handoff app.
+You will package cleaned data with documentation, rights, and citation details so it can be reused and cited safely. The focus is publishing files, careful reuse, and an optional handoff app.
 
 ## Key concepts
 - Publishing with care: practices that keep data safe, explainable, and respectful of rights and context. Think of packing a fragile item for shipping: you add padding, clear labels, and a note on how to handle it so it arrives intact.
@@ -16,7 +16,7 @@ You will package cleaned data with documentation, rights, and citation details s
 - Licensing: `learn/licensing_for_datasets_and_media.md`.
 
 ## Why this toolset fits today
-- Publishing artifacts (LICENSE, CITATION.cff, .zenodo.json) make the package citable and clear.
+- Publishing files (LICENSE, CITATION.cff, .zenodo.json) make the package citable and clear.
 - Streamlit offers a simple handoff for colleagues to view data and quality status without code. Tradeoff: requires a local install if you run it.
 
 ## What success looks like today

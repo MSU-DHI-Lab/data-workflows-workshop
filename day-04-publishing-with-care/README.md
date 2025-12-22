@@ -103,7 +103,7 @@ If time is tight, finish Labs 01 and 02. You can review the Lab 03 report later 
 | [02-job-aids/troubleshooting.md](02-job-aids/troubleshooting.md) | Troubleshooting for licensing, metadata, and app issues |
 | [03-assessments/knowledge_check.md](03-assessments/knowledge_check.md) | Short questions to confirm publishing concepts |
 | [03-assessments/performance_task.md](03-assessments/performance_task.md) | Applied task to package and document a dataset for reuse |
-| [05-artifacts/README.md](05-artifacts/README.md) | Checklist of what to save and how to store final outputs |
+| [05-deliverables/README.md](05-deliverables/README.md) | Checklist of what to save and how to store final outputs |
 
 ## Working Solo vs. Facilitating a Group
 
@@ -121,9 +121,9 @@ Check your work against this list. You should have:
   - [ ] `docs/data_dictionary.csv` defining each field
   - [ ] `docs/origins_and_changes.md` explaining how the data was cleaned
   - [ ] `checks/` folder with your validation report from Day 03
-- [ ] `01-labs/lab-02/artifacts/LICENSE` with clear reuse terms (for example, CC BY 4.0)
-- [ ] `01-labs/lab-02/artifacts/CITATION.cff` with title, authors, version, and date
-- [ ] `01-labs/lab-02/artifacts/.zenodo.json` with matching metadata
+- [ ] `01-labs/lab-02/deliverables/LICENSE` with clear reuse terms (for example, CC BY 4.0)
+- [ ] `01-labs/lab-02/deliverables/CITATION.cff` with title, authors, version, and date
+- [ ] `01-labs/lab-02/deliverables/.zenodo.json` with matching metadata
 - [ ] All four files (README, LICENSE, CITATION.cff, .zenodo.json) agreeing on title, version, and license
 
 If you have a complete package folder with documentation and aligned metadata, you have completed the core work for Day 04. The package is ready to share, deposit, or hand off to a colleague.
@@ -136,7 +136,7 @@ If you have a complete package folder with documentation and aligned metadata, y
 | CITATION.cff will not parse | Indentation or syntax error | Check indentation, avoid tabs, validate against example keys |
 | .zenodo.json rejected | Missing required fields or trailing commas | Ensure required fields are present, validate JSON structure |
 | Streamlit app not launching | Module not installed | Run `pip install streamlit` and start from `lab-03/` |
-| Package feels incomplete | Missing files | Compare against the checklist in [05-artifacts/README.md](05-artifacts/README.md) |
+| Package feels incomplete | Missing files | Compare against the checklist in [05-deliverables/README.md](05-deliverables/README.md) |
 
 For more troubleshooting, see [02-job-aids/troubleshooting.md](02-job-aids/troubleshooting.md).
 

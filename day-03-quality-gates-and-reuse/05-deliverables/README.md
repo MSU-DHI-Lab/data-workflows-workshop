@@ -1,4 +1,4 @@
-# Artifacts
+# Deliverables
 
 Use this folder to store Day 03 outputs.
 

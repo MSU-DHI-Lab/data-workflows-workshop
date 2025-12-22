@@ -144,7 +144,7 @@ Walk through each file and make sure it makes sense. Imagine you are receiving t
 
 If you want a single file to hand off, zip the `dataset-package` folder.
 
-Place the zip in `05-artifacts/` or wherever you store final outputs.
+Place the zip in `05-deliverables/` or wherever you store final outputs.
 
 Bundling reduces the risk of missing files when you share the package by email or file transfer.
 

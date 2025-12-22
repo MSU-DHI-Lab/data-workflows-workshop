@@ -91,7 +91,7 @@ If time is tight, complete Lab 01 and Lab 02 through the outbox step. You can sk
 | [02-job-aids/troubleshooting.md](02-job-aids/troubleshooting.md) | Day 02 troubleshooting with facilitator fallback steps |
 | [03-assessments/knowledge_check.md](03-assessments/knowledge_check.md) | Short questions to confirm you understand flow basics |
 | [03-assessments/performance_task.md](03-assessments/performance_task.md) | Applied task to design a small flow for your own context |
-| [05-artifacts/README.md](05-artifacts/README.md) | Checklist of outputs to save |
+| [05-deliverables/README.md](05-deliverables/README.md) | Checklist of outputs to save |
 
 ## Working Solo vs. Facilitating a Group
 
@@ -106,8 +106,8 @@ Check your work against this list. You should have:
 - [ ] NiFi running locally at `http://localhost:8080/nifi/` without errors
 - [ ] A sample file that moved from `inputs/` to `outputs/` through your flow
 - [ ] At least one file routed to `quarantine/` because it did not meet the expected pattern
-- [ ] `01-labs/lab-02/artifacts/flow_definition.json` containing your exported flow
-- [ ] `01-labs/lab-02/artifacts/flow_blueprint.md` with notes on processor settings
+- [ ] `01-labs/lab-02/deliverables/flow_definition.json` containing your exported flow
+- [ ] `01-labs/lab-02/deliverables/flow_blueprint.md` with notes on processor settings
 - [ ] A provenance screenshot or narrative for a single file's journey
 
 If you have the flow definition and a provenance trace for one file, you have completed the core work for Day 02. The flow definition is your recipe for repeatable movement, and the provenance trace is your proof of what happened.

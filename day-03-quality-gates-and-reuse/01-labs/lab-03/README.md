@@ -4,7 +4,7 @@ The goal of this lab is to run your Pandera validation rules against a dataset w
 
 **Inputs:**
 - `inputs/collection_with_failures.csv` (a dataset with intentional problems)
-- `../lab-02/artifacts/validation_schema.py`
+- `../lab-02/deliverables/validation_schema.py`
 
 **Outputs:**
 - `validation_report.md` in this lab folder
@@ -26,9 +26,9 @@ Open `notebooks/lab03_report.ipynb` in Colab or locally.
 
 Run the install cell if prompted. You should see Pandera install successfully.
 
-Run the notebook from the `lab-03/` folder so imports find the schema file in `../lab-02/artifacts/`.
+Run the notebook from the `lab-03/` folder so imports find the schema file in `../lab-02/deliverables/`.
 
-If imports fail, check the relative path. The notebook expects to import from `../lab-02/artifacts/validation_schema.py`.
+If imports fail, check the relative path. The notebook expects to import from `../lab-02/deliverables/validation_schema.py`.
 
 ---
 
@@ -40,7 +40,7 @@ The notebook loads your validation schema from Lab 02 and reads `collection_with
 
 You should see a preview of the data. Look for suspicious values: a missing id, a bad rights token, a date far in the future.
 
-If the schema import fails, check the file path. Make sure `validation_schema.py` exists in `../lab-02/artifacts/` and that you are running from `lab-03/`.
+If the schema import fails, check the file path. Make sure `validation_schema.py` exists in `../lab-02/deliverables/` and that you are running from `lab-03/`.
 
 ---
 
@@ -80,7 +80,7 @@ For each failure, decide:
 
 Write a few bullet points connecting failures to actions. This shows careful review, not just running tools.
 
-Add your notes to the report or keep them in `05-artifacts/README.md`.
+Add your notes to the report or keep them in `05-deliverables/README.md`.
 
 ---
 
@@ -99,7 +99,7 @@ If all four are checked, you have completed Day 03.
 
 ## If Something Went Wrong
 
-**Schema import fails:** Check the file path. The notebook expects the schema at `../lab-02/artifacts/validation_schema.py`. Run from `lab-03/` so relative paths work.
+**Schema import fails:** Check the file path. The notebook expects the schema at `../lab-02/deliverables/validation_schema.py`. Run from `lab-03/` so relative paths work.
 
 **No failures found:** The test data may accidentally pass your rules. Check that `collection_with_failures.csv` has genuinely invalid values (wrong rights tokens, missing ids, bad dates).
 

@@ -3,7 +3,7 @@
 ## Three keep-it-simple moves
 - Keep processors explainable: if you cannot describe a box in one sentence, split it or remove it.
 - Facet the flow: use the run record and queues like facets. Look before changing settings.
-- Export artifacts: download the flow definition and record key properties alongside it.
+- Export deliverables: download the flow definition and record key properties alongside it.
 
 ## Core processors used today
 - GetFile: watch a folder and ingest files.

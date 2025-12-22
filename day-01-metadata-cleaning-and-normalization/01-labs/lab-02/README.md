@@ -10,8 +10,8 @@ This takes about 30 minutes.
 
 **Outputs:**
 - Cleaned CSV saved to `outputs/collection_cleaned.csv`
-- Operations file saved to `artifacts/openrefine_operations.json`
-- Data dictionary and dataset README starter files in `artifacts/`
+- Operations file saved to `deliverables/openrefine_operations.json`
+- Data dictionary and dataset README starter files in `deliverables/`
 
 ## Why These Fields, and Why Keep Changes Small
 
@@ -35,9 +35,9 @@ You should see the same rows and facets from Lab 01. If the data looks different
 
 ## Step 2: Apply the Provided Operations File
 
-OpenRefine can replay a saved set of transformations. A sample operations file is provided in `artifacts/openrefine_operations.json`. Applying it shows you how reproducibility works in practice.
+OpenRefine can replay a saved set of transformations. A sample operations file is provided in `deliverables/openrefine_operations.json`. Applying it shows you how reproducibility works in practice.
 
-Go to the Undo/Redo tab (top left of the screen), click Apply, and paste the contents of `artifacts/openrefine_operations.json`. Click Perform Operations.
+Go to the Undo/Redo tab (top left of the screen), click Apply, and paste the contents of `deliverables/openrefine_operations.json`. Click Perform Operations.
 
 You should see changes happen immediately. Rights values collapse to three options. Place values normalize. Creator spacing cleans up.
 
@@ -87,7 +87,7 @@ If rows are missing, check that no filters are active. Go back to OpenRefine, cl
 
 ## Step 7: Export Your Updated Operations File
 
-Go to the Undo/Redo tab, click Extract, and copy the JSON. Save it to `artifacts/openrefine_operations.json`, replacing the sample file with your own version.
+Go to the Undo/Redo tab, click Extract, and copy the JSON. Save it to `deliverables/openrefine_operations.json`, replacing the sample file with your own version.
 
 This captures the exact steps you applied. Anyone can replay this file on a new export to get the same results.
 
@@ -97,13 +97,13 @@ If the extracted JSON is empty, check the Undo/Redo tab for recorded steps. If n
 
 ## Step 8: Start the Documentation Files
 
-Open `artifacts/data_dictionary_template.md` and `artifacts/dataset_readme_template.md`. Fill them with your cleaned field definitions and notes about what changed.
+Open `deliverables/data_dictionary_template.md` and `deliverables/dataset_readme_template.md`. Fill them with your cleaned field definitions and notes about what changed.
 
-Save your completed versions into `05-artifacts/` or keep them alongside your cleaned CSV.
+Save your completed versions into `05-deliverables/` or keep them alongside your cleaned CSV.
 
 Documentation alongside the data preserves meaning and helps others understand your decisions. Even brief notes are valuable.
 
-If you edited heavily and want a clean start, copy fresh templates from `artifacts/`.
+If you edited heavily and want a clean start, copy fresh templates from `deliverables/`.
 
 ---
 
@@ -112,7 +112,7 @@ If you edited heavily and want a clean start, copy fresh templates from `artifac
 Before moving on, confirm:
 
 - [ ] `outputs/collection_cleaned.csv` exists and has consistent values
-- [ ] `artifacts/openrefine_operations.json` contains your cleaning steps
+- [ ] `deliverables/openrefine_operations.json` contains your cleaning steps
 - [ ] You started notes on your normalization decisions
 
 If all three are checked, you are ready for Lab 03.

@@ -10,7 +10,7 @@ Now think about handing over your home Wi-Fi password to a guest. You might also
 ## A concrete example (mini case study)
 Mini case study: An archive shares a cleaned CSV and associated scans. They include a README describing the source system, a data dictionary defining each field, notes on what changed, and a validation report from Day 03 checks. A partner ingesting the files can see what changed, which rights tokens apply, and how to cite the dataset.
 ## How this shows up in this workshop
-- Day 01–03 produce cleaning notes, an OpenRefine operations file (a saved record of the steps), and validation summaries you can place in the artifacts folder.
+- Day 01–03 produce cleaning notes, an OpenRefine operations file (a saved record of the steps), and validation summaries you can place in the deliverables folder.
 - Day 04 packages README, data dictionary, notes on what changed, and validation reports inside the dataset bundle.
 - CITATION.cff and license files are part of the traveling documentation for publishing.
 ## What “successful understanding” looks like

@@ -8,7 +8,7 @@
 ## Handling guidance
 - Redaction: remove or mask personally identifiable information and sensitive location details before sharing. Note redactions in README and provenance notes.
 - Access: store working files locally or in approved institutional storage. Avoid public links for sensitive drafts.
-- Retention: delete temporary working files after packaging the final artifacts. Keep the published bundle and its documentation together.
+- Retention: delete temporary working files after packaging the final deliverables. Keep the published bundle and its documentation together.
 - Attribution: include CITATION.cff and license details with every shared bundle to set reuse expectations.
 
 ## Checks before sharing

@@ -1,6 +1,6 @@
 # Quick Reference
 
-## Publishing artifacts and why
+## Publishing files and why
 - README: context, notes on what changed, safe reuse guidance.
 - Data dictionary: field meanings; prevents misinterpretation.
 - LICENSE: permissions and restrictions; reduces ambiguity.

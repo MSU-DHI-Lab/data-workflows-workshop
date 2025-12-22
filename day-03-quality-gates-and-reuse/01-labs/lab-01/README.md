@@ -6,13 +6,15 @@ Profiling is sometimes called "exploratory data analysis" or EDA. The idea is si
 
 **Inputs:** `inputs/collection_cleaned.csv`
 
-**Outputs:** Notes on shape, missingness, and allowed lists (save in `05-artifacts/` if you like)
+**Outputs:** Notes on shape, missingness, and allowed lists (save in `05-deliverables/` if you like)
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/MSU-DHI-Lab/data-workflows-workshop/blob/main/day-03-quality-gates-and-reuse/01-labs/lab-01/notebooks/lab01_profile.ipynb)
 
 ## Before You Start
 
 This is your first time writing validation rules in Python. Do not worry if notebooks are new to you. The cells are pre-written, and you will run them one at a time to see what they do.
+
+A notebook is a document that mixes text and code. You run each code cell by clicking the play button or pressing Shift+Enter. The output appears right below the cell. You work through the notebook from top to bottom, running cells in order.
 
 If something breaks, read the error message. Most errors in this lab come from file paths or missing uploads. The fixes are usually straightforward.
 

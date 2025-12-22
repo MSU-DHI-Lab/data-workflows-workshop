@@ -10,5 +10,5 @@ You need to ship a dataset to a downstream team. They trust your cleaning but wa
 4) Produce a markdown report summarizing results and recommended next actions (fix data, adjust checks, quarantine).
 
 ## Submission
-- Place your validation rules file (`validation_schema.py`), validation report, and any notes in `05-artifacts/submissions/`.
+- Place your validation rules file (`validation_schema.py`), validation report, and any notes in `05-deliverables/submissions/`.
 - Include the inputs and outputs you used for testing.

@@ -7,7 +7,7 @@ The goal of this lab is to build an explainable NiFi flow that ingests files, ma
 **Outputs:**
 - Cleaned files in `outputs/`
 - Quarantined files in `quarantine/`
-- Blueprint and settings in `artifacts/`
+- Blueprint and settings in `deliverables/`
 
 ## Before You Start
 
@@ -140,13 +140,18 @@ These are the destinations for clean and questionable files.
 
 ## Step 10: Connect RouteOnContent to Both Destinations
 
+RouteOnContent has two outgoing relationships you care about:
+
+- **quarantine**: Files that matched the quarantine pattern (files missing valid rights)
+- **unmatched**: Files that did not match the quarantine pattern (files with valid rights)
+
 Connect RouteOnContent to the outputs PutFile:
-- In the connection dialog, select the `unmatched` relationship (files that passed the allowed-rights check)
+- In the connection dialog, select the `unmatched` relationship. These are files with valid rights that passed the check.
 
 Connect RouteOnContent to the quarantine PutFile:
-- Select the `quarantine` relationship (files that failed the check)
+- Select the `quarantine` relationship. These are files missing valid rights.
 
-You should now have a complete flow from GetFile through to two PutFile destinations.
+You should now have a complete flow from GetFile through to two PutFile destinations. Files with valid rights go to outputs. Files without valid rights go to quarantine.
 
 ---
 
@@ -166,7 +171,7 @@ If files are not moving, check that all processors are started (green play icon)
 
 Right-click on an empty area of the canvas and look for "Download flow definition" or check the top-right menu (the NiFi logo dropdown) for an export option.
 
-Save the file as `artifacts/flow_definition.json`.
+Save the file as `deliverables/flow_definition.json`.
 
 This captures your entire flow so others can import it and get the same setup.
 
@@ -174,7 +179,7 @@ This captures your entire flow so others can import it and get the same setup.
 
 ## Step 13: Document Your Settings
 
-Open `artifacts/flow_blueprint.md` and record the key processor settings you configured. Include:
+Open `deliverables/flow_blueprint.md` and record the key processor settings you configured. Include:
 - GetFile input directory
 - Allowed rights tokens
 - ReplaceText regex
@@ -190,8 +195,8 @@ Before moving on, confirm:
 
 - [ ] All processors are running without errors
 - [ ] A test file moved from `inputs/` to `outputs/` or `quarantine/`
-- [ ] `artifacts/flow_definition.json` exists
-- [ ] `artifacts/flow_blueprint.md` has your settings documented
+- [ ] `deliverables/flow_definition.json` exists
+- [ ] `deliverables/flow_blueprint.md` has your settings documented
 
 If all four are checked, you are ready for Lab 03.
 
@@ -201,10 +206,12 @@ If all four are checked, you are ready for Lab 03.
 
 **Processor shows invalid state:** Open the processor configuration and look for red text indicating which property is wrong. Fix it and apply again.
 
-**Files not moving:** Check that all processors are started. Look for backpressure warnings on queues. Check the bulletin board for errors.
+**Files not moving:** Check that all processors are started (green play icon). Look for backpressure warnings on queues. Check the bulletin board (bell icon, top right) for error messages.
 
 **Files land in the wrong folder:** Verify the directory paths in PutFile match `/opt/nifi/outputs` and `/opt/nifi/quarantine`. These are paths inside the Docker container, not on your local machine.
 
-**Regex not matching:** Test your regex with a simple pattern first. Check for missing parentheses or vertical bars.
+**Regex not matching:** Test your regex with a simple pattern first. Check for missing parentheses or vertical bars. The case-insensitive flag `(?i)` should be at the start.
 
 **Cannot export flow:** Try both the canvas right-click menu and the top-right NiFi logo dropdown. Different NiFi versions put the export option in different places.
+
+**No files in inputs folder:** Go back to Lab 01 Step 6. You need to copy `intake_sample.csv` from `lab-01/inputs/` into `lab-02/inputs/` before testing the flow.

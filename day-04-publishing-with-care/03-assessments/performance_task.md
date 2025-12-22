@@ -11,5 +11,5 @@ You need to publish a cleaned dataset so partners can cite and reuse it responsi
 5) (Optional) Run the Streamlit handoff and include a short written note describing what the handoff view shows and who it is for.
 
 ## Submission
-- Place your package zip (or folder), metadata files, and checklist in `05-artifacts/submissions/`.
+- Place your package zip (or folder), metadata files, and checklist in `05-deliverables/submissions/`.
 - If you minted a DOI, include the link. If not, note “practice path”.

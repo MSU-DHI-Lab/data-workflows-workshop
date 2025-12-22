@@ -4,7 +4,7 @@ The goal of this lab is to spot inconsistencies before changing anything. You wi
 
 **Inputs:** `inputs/collection_export_raw.csv`
 
-**Outputs:** Three written cleaning targets in your notes (save them in `05-artifacts/` if you want to keep them)
+**Outputs:** Three written cleaning targets in your notes (save them in `05-deliverables/` if you want to keep them)
 
 ## Why Facets First
 
@@ -21,6 +21,8 @@ Open OpenRefine and create a new project from `inputs/collection_export_raw.csv`
 You should see a table preview with columns `id`, `title`, `creator`, `place`, `rights`, `description`, and `date`. Each column should have a meaningful header, not data values.
 
 If something looks wrong, go back and reimport. Check that you selected CSV (not TSV) and that the header row option is enabled.
+
+This is your first time using OpenRefine if you are new to the tool. Take a moment to look around the interface. The main area shows your data in rows and columns. The column headers have dropdown arrows that give you access to transforms and facets. The left side panel will show facets once you create them. The Undo/Redo tab at the top left tracks everything you do.
 
 ---
 

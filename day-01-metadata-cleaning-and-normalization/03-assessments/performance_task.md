@@ -12,5 +12,5 @@ You received a new batch of metadata from a partner institution. Rights statemen
 6) Write a short note explaining why you made each consistency choice.
 
 ## Submission
-- Place your cleaned CSV, OpenRefine operations file, and validation summary in `05-artifacts/submissions/`.
+- Place your cleaned CSV, OpenRefine operations file, and validation summary in `05-deliverables/submissions/`.
 - Include a brief README that describes your cleaning targets and why you stopped where you did.

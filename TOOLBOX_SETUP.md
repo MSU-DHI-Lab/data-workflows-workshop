@@ -79,7 +79,7 @@ If you cannot install software locally (managed machines, restricted permissions
   - Metadata rejected: ensure required fields (title, creators, description, license, version) are filled.
   - Size limits: compress or split files; describe large external files in README.
   - License mismatch: align LICENSE, README, CITATION.cff, and `.zenodo.json`.
-  - Plan B if accounts are restricted: complete the practice path locally, keep the bundle in `05-artifacts/`, and include a note for future deposit.
+  - Plan B if accounts are restricted: complete the practice path locally, keep the bundle in `05-deliverables/`, and include a note for future deposit.
 
 ## What success looks like overall
 - OpenRefine UI loads locally. NiFi UI loads at `http://localhost:8080/nifi/`. Colab notebooks run with dependencies installed. Pandera checks pass or fail with clear messages. Optional Streamlit app launches from `day-04-publishing-with-care/01-labs/lab-03/`. Zenodo metadata is complete and consistent.

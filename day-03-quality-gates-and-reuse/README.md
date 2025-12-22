@@ -88,7 +88,7 @@ If time is tight, finish Lab 01 and Lab 02. You can skim Lab 03's reporting step
 | [02-job-aids/troubleshooting.md](02-job-aids/troubleshooting.md) | Troubleshooting for notebook, schema, and dependency issues |
 | [03-assessments/knowledge_check.md](03-assessments/knowledge_check.md) | Short questions to confirm understanding of validation concepts |
 | [03-assessments/performance_task.md](03-assessments/performance_task.md) | Applied task to design a validation schema for your own dataset |
-| [05-artifacts/README.md](05-artifacts/README.md) | What outputs to save from the labs |
+| [05-deliverables/README.md](05-deliverables/README.md) | What outputs to save from the labs |
 
 ## Working Solo vs. Facilitating a Group
 
@@ -100,7 +100,7 @@ If time is tight, finish Lab 01 and Lab 02. You can skim Lab 03's reporting step
 
 Check your work against this list. You should have:
 
-- [ ] `01-labs/lab-02/artifacts/validation_schema.py` with 6 to 10 checks for key columns
+- [ ] `01-labs/lab-02/deliverables/validation_schema.py` with 6 to 10 checks for key columns
 - [ ] A validation run on clean data that passes without errors
 - [ ] A validation run on intentionally bad data that surfaces failures
 - [ ] `01-labs/lab-03/validation_report.md` explaining which checks matter and why

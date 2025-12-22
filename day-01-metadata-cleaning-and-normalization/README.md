@@ -93,7 +93,7 @@ If time is tight, finish Lab 01 and the operations export in Lab 02. You can ski
 | [02-job-aids/troubleshooting.md](02-job-aids/troubleshooting.md) | Common errors and fixes for Day 01 tools |
 | [03-assessments/knowledge_check.md](03-assessments/knowledge_check.md) | Short questions to confirm you grasp the concepts |
 | [03-assessments/performance_task.md](03-assessments/performance_task.md) | Applied task to practice the skills on your own data |
-| [05-artifacts/README.md](05-artifacts/README.md) | What to save from each lab and how to organize outputs |
+| [05-deliverables/README.md](05-deliverables/README.md) | What to save from each lab and how to organize outputs |
 
 ## Working Solo vs. Facilitating a Group
 
@@ -106,8 +106,8 @@ If time is tight, finish Lab 01 and the operations export in Lab 02. You can ski
 Check your work against this list. You should have:
 
 - [ ] `01-labs/lab-02/outputs/collection_cleaned.csv` with consistent rights and place values
-- [ ] `01-labs/lab-02/artifacts/openrefine_operations.json` capturing your cleaning steps
-- [ ] Notes in `05-artifacts/` explaining your normalization decisions
+- [ ] `01-labs/lab-02/deliverables/openrefine_operations.json` capturing your cleaning steps
+- [ ] Notes in `05-deliverables/` explaining your normalization decisions
 - [ ] A validation summary from Lab 03 showing row counts and distinct values
 
 If you have the cleaned CSV and the operations file saved together, you have completed the core work for Day 01. The operations file is the most important artifact because it lets anyone replay your exact steps on future exports.

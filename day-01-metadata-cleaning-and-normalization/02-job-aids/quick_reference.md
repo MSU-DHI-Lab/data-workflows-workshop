@@ -17,4 +17,4 @@
 ## Common pitfalls to avoid
 - Over-normalizing rights: Do not invent new statements; stick to allowed tokens.
 - Hiding rows with filters: Clear filters before exporting so you do not drop data.
-- Losing provenance: Capture your decisions in the artifacts README along with the operations file.
+- Losing provenance: Capture your decisions in the deliverables README along with the operations file.

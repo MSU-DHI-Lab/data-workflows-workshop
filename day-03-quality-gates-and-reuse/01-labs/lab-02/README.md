@@ -2,11 +2,11 @@
 
 The goal of this lab is to codify 6-10 checks as Pandera validation rules, run them against your cleaned dataset, and save the rules for reuse. This takes about 30 minutes.
 
-**Inputs:** `../lab-01/inputs/collection_cleaned.csv`
+**Inputs:** `../lab-01/inputs/collection_cleaned.csv` (the cleaned data from Lab 01, or your own cleaned CSV from Day 01)
 
 **Outputs:**
 - Validation run confirming the data passes
-- Rules saved to `artifacts/validation_schema.py`
+- Rules saved to `deliverables/validation_schema.py`
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/MSU-DHI-Lab/data-workflows-workshop/blob/main/day-03-quality-gates-and-reuse/01-labs/lab-02/notebooks/lab02_pandera.ipynb)
 
@@ -63,7 +63,7 @@ If you see a NameError, make sure you ran the import cell first. If you see colu
 
 Run the validation cell. It applies the schema to your data.
 
-If all checks pass, you will see the validated dataframe (same as your input data) printed without error messages.
+If all checks pass, you will see the validated dataframe (same as your input data) printed without error messages. This is your first time running a validation schema. A passing result means your data matches the rules you defined. It is a good feeling.
 
 If any checks fail, you will see an error listing which column, which check, and which values failed. This is expected if your data does not match the rules. Read the error message to understand what went wrong.
 
@@ -73,13 +73,13 @@ For example, if you see "Check failed: isin" on the rights column, it means some
 
 ## Step 5: Save the Schema
 
-Run the cell that saves the schema to `artifacts/validation_schema.py`.
+Run the cell that saves the schema to `deliverables/validation_schema.py`.
 
 This creates a Python file you can import in other projects. The schema is now portable and version-controllable.
 
 You should see a confirmation message that the file was written.
 
-If the save fails, check the file path. Make sure the `artifacts/` folder exists. Run the notebook from inside `lab-02/` so relative paths resolve correctly.
+If the save fails, check the file path. Make sure the `deliverables/` folder exists. Run the notebook from inside `lab-02/` so relative paths resolve correctly.
 
 ---
 
@@ -92,7 +92,7 @@ Examples:
 - `id > 0` catches placeholder or error values
 - `title not blank` ensures every record has a human-readable label
 
-Save these notes alongside your schema or in `05-artifacts/README.md`. Documentation makes the checks understandable to future maintainers.
+Save these notes alongside your schema or in `05-deliverables/README.md`. Documentation makes the checks understandable to future maintainers.
 
 ---
 
@@ -103,7 +103,7 @@ Before moving on, confirm:
 - [ ] Pandera installed without errors
 - [ ] Your validation schema has 6-10 checks
 - [ ] Validation ran successfully on your cleaned data
-- [ ] `artifacts/validation_schema.py` exists with your saved schema
+- [ ] `deliverables/validation_schema.py` exists with your saved schema
 - [ ] You have notes explaining why each check matters
 
 If all five are checked, you are ready for Lab 03.
@@ -120,4 +120,4 @@ If all five are checked, you are ready for Lab 03.
 
 **Type errors:** If a column is the wrong type (for example, dates stored as strings), add `coerce=True` to that column in the schema, or cast the column in pandas before validation.
 
-**File not saved:** Check that you are running the notebook from the `lab-02/` folder and that `artifacts/` exists. Create the folder if missing.
+**File not saved:** Check that you are running the notebook from the `lab-02/` folder and that `deliverables/` exists. Create the folder if missing.

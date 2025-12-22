@@ -68,7 +68,7 @@ For setup and fallbacks, use `TOOLBOX_SETUP.md`.
 Each day follows the same shape:
 1) Primer concepts (5 to 10 minutes)
 2) Labs (50 to 70 minutes total)
-3) Wrap-up (5 to 10 minutes): capture artifacts and a short reflection
+3) Wrap-up (5 to 10 minutes): capture deliverables and a short reflection
 
 ## Day-by-day agenda and outputs
 
@@ -129,4 +129,4 @@ If learners cannot install software:
 A participant has completed the workshop when they can:
 - Produce the day outputs.
 - Explain, in plain language, what changed and why.
-- Point to evidence that supports trust and reuse (OpenRefine operations file, notes on what changed, validation report, licensing and citation artifacts).
+- Point to evidence that supports trust and reuse (OpenRefine operations file, notes on what changed, validation report, licensing and citation files).

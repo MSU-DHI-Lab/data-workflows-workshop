@@ -4,7 +4,7 @@ The goal of this lab is to verify quarantine routing works and trace one file th
 
 **Inputs:** Your flow from Lab 02, sample files in `inputs/`
 
-**Outputs:** Quarantined files (if any), run record notes in `artifacts/provenance_narrative_template.md`
+**Outputs:** Quarantined files (if any), run record notes in `deliverables/provenance_narrative_template.md`
 
 ## Key Terms
 
@@ -71,7 +71,7 @@ If the lineage looks incomplete, try widening the time window or selecting a dif
 
 ## Step 5: Write a Provenance Narrative
 
-Open `artifacts/provenance_narrative_template.md` and fill it out for the file you traced.
+Open `deliverables/provenance_narrative_template.md` and fill it out for the file you traced.
 
 Document:
 - What file did you trace?
@@ -102,7 +102,7 @@ Before moving on, confirm:
 - [ ] At least one file landed in `quarantine/` based on your routing rule
 - [ ] You viewed the provenance for that file and saw the event sequence
 - [ ] You viewed the lineage graph for a single file
-- [ ] `artifacts/provenance_narrative_template.md` is filled out
+- [ ] `deliverables/provenance_narrative_template.md` is filled out
 
 If all four are checked, you have completed Day 02.
 
