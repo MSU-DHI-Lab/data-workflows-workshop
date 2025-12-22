@@ -1,35 +1,110 @@
 # Lab 03: Generate Quality Report and Practice with Known Failures
 
-Goal: run your Pandera validation rules against a dataset with intentional issues, read the failures, and produce a markdown report colleagues can understand.
+The goal of this lab is to run your Pandera validation rules against a dataset with intentional issues, read the failures, and produce a markdown report colleagues can understand. This takes about 20 minutes.
 
-Inputs: `inputs/collection_with_failures.csv`, `artifacts/validation_schema.py`
-Outputs: `validation_report.md` plus your notes
-Time: ~20 minutes.
+**Inputs:**
+- `inputs/collection_with_failures.csv` (a dataset with intentional problems)
+- `../lab-02/artifacts/validation_schema.py`
+
+**Outputs:**
+- `validation_report.md` in this lab folder
+- Notes on what you would do next (fix data, adjust checks, or quarantine)
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/watrall/data-workflows-workshop/blob/main/day-03-quality-gates-and-reuse/01-labs/lab-03/notebooks/lab03_report.ipynb)
 
-## Steps
-1) **Do:** Open `notebooks/lab03_report.ipynb` in Colab or locally (run it from `lab-03/`) and run the install cell.  
-   **Why:** Ensures Pandera is available in this session and paths resolve to the rules file and inputs.  
-   **You should see:** Successful install logs.  
-   **If it doesn't look right:** Rerun the cell; verify internet access; confirm you are running from `lab-03/` so imports find `../lab-02/artifacts/validation_schema.py`.
+## Before You Start
 
-2) **Do:** Run the rules import and data load cell.  
-   **Why:** Uses the same rules on a dataset with known issues to see real failures.  
-   **You should see:** A preview with some suspect values (missing id, bad rights token, far future date).  
-   **If it doesn't look right:** Check paths; ensure `validation_schema.py` exists in `artifacts/` and you are running the notebook from `lab-03/` so the relative import works.
+Lab 02 validated clean data. This lab validates intentionally bad data to see what failure looks like.
 
-3) **Do:** Run the validation try/except cell.  
-   **Why:** Collects all failures (`lazy=True`) so you see the full picture.  
-   **You should see:** A table of failure cases showing column, check, and failing value.  
-   **If it doesn't look right:** Confirm the rules imported; ensure the dataset columns match what the rules expect.
+Seeing failures is important. In real work, you will encounter problems. Knowing how to read error messages and explain them to others is a core skill.
 
-4) **Do:** Run the report generation cell to create `validation_report.md`.  
-   **Why:** Reports are artifacts for colleagues. They are clear, portable evidence of what failed.  
-   **You should see:** Printed report text and a saved `validation_report.md`.  
-   **If it doesn't look right:** Verify `validation_errors` is populated; rerun validation with `lazy=True`.
+---
 
-5) **Do:** Add a short reflection in your notes: which checks caught what, and what you would do next (fix data, adjust checks, quarantine).  
-   **Why:** Connects failures to actions; shows careful review, not only tooling.  
-   **You should see:** A few bullet points you can share with teammates.  
-   **If it doesn't look right:** Re-read the failure cases; tie each to a specific check and risk prevented.
+## Step 1: Open the Notebook and Install Dependencies
+
+Open `notebooks/lab03_report.ipynb` in Colab or locally.
+
+Run the install cell if prompted. You should see Pandera install successfully.
+
+Run the notebook from the `lab-03/` folder so imports find the schema file in `../lab-02/artifacts/`.
+
+If imports fail, check the relative path. The notebook expects to import from `../lab-02/artifacts/validation_schema.py`.
+
+---
+
+## Step 2: Load the Schema and Bad Data
+
+Run the rules import and data load cell.
+
+The notebook loads your validation schema from Lab 02 and reads `collection_with_failures.csv`, a dataset with known issues.
+
+You should see a preview of the data. Look for suspicious values: a missing id, a bad rights token, a date far in the future.
+
+If the schema import fails, check the file path. Make sure `validation_schema.py` exists in `../lab-02/artifacts/` and that you are running from `lab-03/`.
+
+---
+
+## Step 3: Run Validation with lazy=True
+
+Run the validation try/except cell. The `lazy=True` option tells Pandera to collect all failures instead of stopping at the first one.
+
+You should see a table of failure cases. Each row shows:
+- Which column failed
+- Which check failed
+- What value caused the failure
+
+Read through the failures. Can you connect each one to a rule in your schema?
+
+If no failures appear, the test data may not actually violate your rules. Check that the bad file has genuinely invalid values.
+
+---
+
+## Step 4: Generate the Markdown Report
+
+Run the report generation cell. It creates `validation_report.md` with a summary of failures.
+
+You should see the report text printed in the notebook and a message confirming the file was saved.
+
+The report should be readable by someone who does not know Pandera. It explains what failed, why it matters, and what to do next.
+
+If the file does not save, check your working directory and write permissions.
+
+---
+
+## Step 5: Reflect on What You Would Do Next
+
+For each failure, decide:
+- **Fix the data:** The value is wrong and should be corrected
+- **Adjust the check:** The rule is too strict and the value is actually valid
+- **Quarantine:** The record is problematic and should be set aside for review
+
+Write a few bullet points connecting failures to actions. This shows careful review, not just running tools.
+
+Add your notes to the report or keep them in `05-artifacts/README.md`.
+
+---
+
+## Checkpoint
+
+Before moving on, confirm:
+
+- [ ] Validation ran against the bad data and found failures
+- [ ] You can explain what each failure means in plain language
+- [ ] `validation_report.md` exists with a clear summary
+- [ ] You have notes on what you would do next for each failure type
+
+If all four are checked, you have completed Day 03.
+
+---
+
+## If Something Went Wrong
+
+**Schema import fails:** Check the file path. The notebook expects the schema at `../lab-02/artifacts/validation_schema.py`. Run from `lab-03/` so relative paths work.
+
+**No failures found:** The test data may accidentally pass your rules. Check that `collection_with_failures.csv` has genuinely invalid values (wrong rights tokens, missing ids, bad dates).
+
+**Failure messages are confusing:** Use `lazy=True` to see all errors at once. Each failure row includes the column name, check name, and failing value. Match these to your schema rules.
+
+**Report file not saving:** Check write permissions and working directory. Try saving to a different location or copying the output manually.
+
+**Colab session reset:** Rerun the install cell, re-upload data files, and rerun from the top.

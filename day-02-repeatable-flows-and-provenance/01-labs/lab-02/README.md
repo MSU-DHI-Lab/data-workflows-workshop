@@ -1,63 +1,210 @@
-# Lab 02: Build a Minimal Flow (Inbox → Make Values Consistent → Outbox)
+# Lab 02: Build a Minimal Flow (Inbox to Outbox with Routing)
 
-Goal: build an explainable NiFi flow that ingests files, makes rights text consistent, routes questionable files to quarantine, and writes clean files to an outbox.
+The goal of this lab is to build an explainable NiFi flow that ingests files, makes rights text consistent, routes questionable files to quarantine, and writes clean files to an outbox. This takes about 30 minutes.
 
-Inputs: `../lab-02/inputs/` seeded with `intake_sample.csv`
-Outputs: Cleaned files in `outputs/`, quarantined files in `quarantine/`, blueprint and settings in `artifacts/`
-Time: ~30 minutes.
+**Inputs:** `inputs/` folder seeded with `intake_sample.csv` from Lab 01
 
-## Steps
-1) **Do:** Start NiFi with `docker compose up` from `lab-01/` if not already running.  
-   **Why:** Ensures the NiFi UI and mounted folders are available.  
-   **You should see:** Logs showing NiFi started; UI reachable at `http://localhost:8080/nifi/`.  
-   **If it doesn't look right:** Stop any previous run with `docker compose down`; retry `docker compose up`.
+**Outputs:**
+- Cleaned files in `outputs/`
+- Quarantined files in `quarantine/`
+- Blueprint and settings in `artifacts/`
 
-2) **Do:** On the canvas, drag a **GetFile** processor and set `Input Directory` to `/opt/nifi/inputs`, `Keep Source File` to `false`.  
-   **Why:** Ingests from the shared inbox and avoids duplicates by removing picked-up files.  
-   **You should see:** A green check on the processor after saving.  
-   **If it doesn't look right:** Confirm the path exists inside NiFi; ensure the processor is enabled (right-click → Start).
+## Before You Start
 
-3) **Do:** Add an **UpdateAttribute** processor; set a new attribute `rights.allowed` to `Public Domain,CC BY 4.0,Rights Reserved`.  
-   **Why:** Stores the allowed tokens visibly for downstream checks; keeps policy in the flow, not someone’s head.  
-   **You should see:** Processor turns valid after saving.  
-   **If it doesn't look right:** Check for typos; ensure no required fields are empty; click Apply again.
+This lab involves dragging processors onto a canvas and configuring them. Each processor does one job. You connect processors with lines to show how data flows.
 
-4) **Do:** Connect GetFile → UpdateAttribute; configure the connection to drop nothing (default).  
-   **Why:** Moves incoming FlowFiles into the metadata-enriched step.  
-   **You should see:** A queue line between processors; status showing queued files after start.  
-   **If it doesn't look right:** Make sure both processors are started; verify the connection is not self-looping.
+Do not worry about making mistakes. NiFi lets you undo, delete, and reconfigure. The goal is to understand the pattern, not to build something perfect on the first try.
 
-5) **Do:** Add **ReplaceText**; set `Search Value` to `(?i)cc[- ]?by[- ]?4\.0`, `Replacement Value` to `CC BY 4.0`, `Evaluation Mode` to `Entire text`.  
-   **Why:** A light consistency step for rights variants without writing code; keeps content consistent.  
-   **You should see:** Processor valid; no errors.  
-   **If it doesn't look right:** Escape backslashes as shown; ensure Evaluation Mode is set.
+---
 
-6) **Do:** Add **RouteOnContent**; create a rule named `quarantine` with expression `^((?!Public Domain|CC BY 4.0|Rights Reserved).)*$` and enable `regex` match strategy.  
-   **Why:** Any file lacking an allowed rights token is routed to quarantine instead of slipping through.  
-   **You should see:** Processor valid with one relationship named `quarantine` plus `unmatched`.  
-   **If it doesn't look right:** Check regex spelling; ensure the rule is enabled; look at the processor validation errors.
+## Step 1: Start NiFi
 
-7) **Do:** Add two **PutFile** processors: one for `outputs` with Directory `/opt/nifi/outputs`, one for `quarantine` with Directory `/opt/nifi/quarantine`.  
-   **Why:** Separate clean and suspect files; quarantine makes review explicit.  
-   **You should see:** Both processors valid after setting directories.  
-   **If it doesn't look right:** Confirm the directories exist (created in Lab 01 step 4); check permissions in Docker logs.
+If NiFi is not already running, open a terminal in the `lab-01/` folder and run:
 
-8) **Do:** Connect ReplaceText → RouteOnContent; RouteOnContent `unmatched` → PutFile (outputs); RouteOnContent `quarantine` → PutFile (quarantine).  
-   **Why:** Directs clean files to the outbox and sends questionable ones to review.  
-   **You should see:** Connections with labels showing relationships; queues showing counts when running.  
-   **If it doesn't look right:** Edit connection settings to choose the right relationship; verify processors are running.
+```
+docker compose up
+```
 
-9) **Do:** Start all processors (select all → Start). Drop `intake_sample.csv` into `lab-02/inputs/` if not already there.  
-   **Why:** Run the flow end-to-end to see routing and cleanup in action.  
-   **You should see:** FlowFiles moving; one file in outputs (consistent rights text) and any non-matching files in quarantine.  
-   **If it doesn't look right:** Check the bulletin board for processor errors; confirm the sample file exists and is not empty.
+Wait for the logs to show NiFi has started, then open `http://localhost:8080/nifi/` in your browser.
 
-10) **Do:** Export a flow definition via the canvas menu: right-click the canvas or use the top-right global menu → “Download flow definition,” then save to `artifacts/flow_definition.json`.  
-    **Why:** Captures the flow for reuse; pairs with the settings table in `flow_blueprint.md`.  
-   **You should see:** A `.json` file downloaded (a structured text file).  
-    **If it doesn't look right:** Ensure you have permission to export; try both the canvas right-click and the global menu (nifi-logo dropdown) in newer NiFi versions.
+You should see the NiFi canvas with a toolbar on the left.
 
-11) **Do:** Record any adjustments to processor properties in `artifacts/flow_blueprint.md` so others can replay the exact setup.  
-   **Why:** Written settings plus the flow file make the work reproducible and auditable.  
-    **You should see:** Updated notes reflecting your final configuration.  
-    **If it doesn't look right:** Reopen processor configs and copy the values carefully; keep explanations short.
+If NiFi does not start, run `docker compose down` first to clean up any old state, then try `docker compose up` again.
+
+---
+
+## Step 2: Add a GetFile Processor
+
+Drag a processor from the toolbar (the first icon that looks like a box) onto the canvas. A dialog opens asking which processor type to add.
+
+Search for `GetFile` and select it. Click Add.
+
+Double-click the GetFile processor to configure it:
+- Set **Input Directory** to `/opt/nifi/inputs`
+- Set **Keep Source File** to `false`
+
+Click Apply, then OK.
+
+The GetFile processor watches a folder and picks up any files that appear. Setting Keep Source File to false means it removes the file after picking it up, preventing duplicate processing.
+
+If the processor shows an error icon, check that you filled in the required fields. The Input Directory path must match the Docker volume mount.
+
+---
+
+## Step 3: Add an UpdateAttribute Processor
+
+Drag another processor onto the canvas and search for `UpdateAttribute`. Add it.
+
+Double-click to configure. Click the plus sign to add a new property:
+- Property name: `rights.allowed`
+- Property value: `Public Domain,CC BY 4.0,Rights Reserved`
+
+Click Apply, then OK.
+
+This stores the allowed rights tokens as an attribute on each file. Downstream processors can use this to decide what is valid.
+
+---
+
+## Step 4: Connect GetFile to UpdateAttribute
+
+Hover over the GetFile processor until you see an arrow icon. Click and drag to the UpdateAttribute processor.
+
+A dialog opens asking which relationship to connect. Select `success` and click Add.
+
+You should see a line connecting the two processors with a small queue icon in the middle.
+
+If you connected to the wrong processor, right-click the connection and delete it, then try again.
+
+---
+
+## Step 5: Add a ReplaceText Processor
+
+Add another processor and search for `ReplaceText`. This processor cleans up text content.
+
+Configure it:
+- **Search Value:** `(?i)cc[- ]?by[- ]?4\.0`
+- **Replacement Value:** `CC BY 4.0`
+- **Evaluation Mode:** `Entire text`
+
+Click Apply, then OK.
+
+The search value is a regular expression (a pattern for matching text). The `(?i)` makes it case-insensitive. This catches variants like `cc by 4.0`, `CC-BY-4.0`, and normalizes them.
+
+If you see a validation error, check that you typed the backslash correctly (`\.0` not just `.0`).
+
+---
+
+## Step 6: Connect UpdateAttribute to ReplaceText
+
+Connect UpdateAttribute to ReplaceText using the `success` relationship.
+
+---
+
+## Step 7: Add a RouteOnContent Processor
+
+Add a `RouteOnContent` processor. This routes files based on what they contain.
+
+Configure it:
+- Click the plus sign to add a new property
+- Property name: `quarantine`
+- Property value: `^((?!Public Domain|CC BY 4.0|Rights Reserved).)*$`
+- In the Settings tab, set **Match Requirement** to `content must contain match`
+
+Click Apply, then OK.
+
+This regex matches files that do NOT contain any of the allowed rights tokens. Those files get routed to quarantine instead of the outbox.
+
+If the processor shows invalid, check the regex for typos. The vertical bars (`|`) separate alternatives.
+
+---
+
+## Step 8: Connect ReplaceText to RouteOnContent
+
+Connect ReplaceText to RouteOnContent using the `success` relationship.
+
+---
+
+## Step 9: Add Two PutFile Processors
+
+Add two `PutFile` processors and position them to the right of RouteOnContent.
+
+Configure the first one:
+- **Directory:** `/opt/nifi/outputs`
+
+Configure the second one:
+- **Directory:** `/opt/nifi/quarantine`
+
+These are the destinations for clean and questionable files.
+
+---
+
+## Step 10: Connect RouteOnContent to Both Destinations
+
+Connect RouteOnContent to the outputs PutFile:
+- In the connection dialog, select the `unmatched` relationship (files that passed the allowed-rights check)
+
+Connect RouteOnContent to the quarantine PutFile:
+- Select the `quarantine` relationship (files that failed the check)
+
+You should now have a complete flow from GetFile through to two PutFile destinations.
+
+---
+
+## Step 11: Start the Flow and Test
+
+Select all processors (Ctrl+A or Cmd+A), right-click, and select Start.
+
+Check that `intake_sample.csv` is in the `lab-02/inputs/` folder. If the file has valid rights content, it should move to `outputs/`. If the rights are invalid, it should move to `quarantine/`.
+
+Watch the queues between processors. You should see numbers briefly appear as files flow through.
+
+If files are not moving, check that all processors are started (green play icon). Look at the bulletin board (top right bell icon) for error messages.
+
+---
+
+## Step 12: Export the Flow Definition
+
+Right-click on an empty area of the canvas and look for "Download flow definition" or check the top-right menu (the NiFi logo dropdown) for an export option.
+
+Save the file as `artifacts/flow_definition.json`.
+
+This captures your entire flow so others can import it and get the same setup.
+
+---
+
+## Step 13: Document Your Settings
+
+Open `artifacts/flow_blueprint.md` and record the key processor settings you configured. Include:
+- GetFile input directory
+- Allowed rights tokens
+- ReplaceText regex
+- RouteOnContent routing rule
+
+This written documentation helps when the JSON file is not enough to explain why you made certain choices.
+
+---
+
+## Checkpoint
+
+Before moving on, confirm:
+
+- [ ] All processors are running without errors
+- [ ] A test file moved from `inputs/` to `outputs/` or `quarantine/`
+- [ ] `artifacts/flow_definition.json` exists
+- [ ] `artifacts/flow_blueprint.md` has your settings documented
+
+If all four are checked, you are ready for Lab 03.
+
+---
+
+## If Something Went Wrong
+
+**Processor shows invalid state:** Open the processor configuration and look for red text indicating which property is wrong. Fix it and apply again.
+
+**Files not moving:** Check that all processors are started. Look for backpressure warnings on queues. Check the bulletin board for errors.
+
+**Files land in the wrong folder:** Verify the directory paths in PutFile match `/opt/nifi/outputs` and `/opt/nifi/quarantine`. These are paths inside the Docker container, not on your local machine.
+
+**Regex not matching:** Test your regex with a simple pattern first. Check for missing parentheses or vertical bars.
+
+**Cannot export flow:** Try both the canvas right-click menu and the top-right NiFi logo dropdown. Different NiFi versions put the export option in different places.

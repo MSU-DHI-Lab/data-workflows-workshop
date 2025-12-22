@@ -1,38 +1,110 @@
 # Lab 03: Optional Streamlit Handoff Interface
 
-Goal: give colleagues a simple way to browse the curated data and see quality status without touching notebooks.
+The goal of this lab is to give colleagues a simple way to browse the curated data and see quality status without touching notebooks. This is optional. If you skip it, you still complete Day 04 successfully.
 
-Inputs: `../lab-01/outputs/dataset-package/data/curated_collection.csv`; optional `validation_report.md`
-Outputs: A running local Streamlit app
-Time: ~20 minutes.
+This takes about 20 minutes.
 
-## Steps
-1) **Do:** Ensure `curated_collection.csv` is in `../lab-01/outputs/dataset-package/data/`.  
-   **Why:** The app reads directly from the packaged data.  
-   **You should see:** The file present in that path.  
-   **If it doesn't look right:** Re-run Lab 01 copy step; confirm the filename.
+**Inputs:**
+- `../lab-01/outputs/dataset-package/data/curated_collection.csv`
+- Optional: `validation_report.md` from Day 03
 
-2) **Do:** (Optional) Place `validation_report.md` from Day 03 into this lab folder.  
-   **Why:** Shows quality status in the app for colleagues.  
-   **You should see:** The markdown file in `lab-03/`.  
-   **If it doesn't look right:** Re-run Lab 03 to generate the report; copy it here.
+**Outputs:** A running local Streamlit app
 
-3) **Do:** From `lab-03/`, run `pip install streamlit` once (if needed), then `streamlit run app.py`.  
-   **Why:** Starts the local app; Streamlit is fast to spin up and easy for non-technical users.  
-   **You should see:** Streamlit opening a local URL with the dashboard.  
-   **If it doesn't look right:** Install Streamlit (`pip install streamlit`) or check that Python is available; be sure you’re running the command inside `lab-03/` so paths resolve.
+## Before You Start
 
-4) **Do:** In the app, filter by rights or place and review the row counts.  
-   **Why:** Lets colleagues explore without editing data.  
-   **You should see:** Filtered tables and a row count updating.  
-   **If it doesn't look right:** Confirm the column names match the dataset; refresh the app.
+Streamlit is a Python tool that creates simple web apps from scripts. You do not need to know web development. You run a command, and a browser-based dashboard appears.
 
-5) **Do:** View the “Data Quality Status” section.  
-   **Why:** Surfaces validation evidence alongside the data.  
-   **You should see:** The markdown report if provided; otherwise an info message.  
-   **If it doesn't look right:** Ensure `validation_report.md` exists; check file permissions.
+This lab is optional because not everyone needs an app. If you are handing off to colleagues who are comfortable with files and folders, the package from Lab 01 and Lab 02 is enough. The app is useful when you want a friendlier preview.
 
-6) **Do:** Stop the app with Ctrl+C when finished.  
-   **Why:** Clean shutdown frees your terminal.  
-   **You should see:** The server stops and the prompt returns.  
-   **If it doesn't look right:** Press Ctrl+C again; close the browser tab.
+---
+
+## Step 1: Confirm Data Is in Place
+
+Check that `../lab-01/outputs/dataset-package/data/curated_collection.csv` exists.
+
+The app reads directly from this path. If the file is missing, go back to Lab 01 and copy it.
+
+---
+
+## Step 2: Add the Validation Report (Optional)
+
+If you have `validation_report.md` from Day 03, copy it into this lab folder (`lab-03/`).
+
+The app can display this report in a "Data Quality Status" section. It shows colleagues that the data passed inspection.
+
+If you do not have the report, the app will show an info message instead. This is fine for the practice path.
+
+---
+
+## Step 3: Install Streamlit
+
+Open a terminal in the `lab-03/` folder and run:
+
+```
+pip install streamlit
+```
+
+You should see installation output ending without errors.
+
+If installation fails, check your Python environment. Make sure you are using Python 3.9 or newer. Try running in a virtual environment if your system Python has restrictions.
+
+---
+
+## Step 4: Launch the App
+
+From the `lab-03/` folder, run:
+
+```
+streamlit run app.py
+```
+
+Your browser should open automatically to a local URL like `http://localhost:8501`.
+
+You should see a dashboard with your data displayed in a table. If you added the validation report, you should see it in the quality status section.
+
+If the browser does not open, copy the URL from the terminal and paste it into your browser manually.
+
+---
+
+## Step 5: Explore the App
+
+Try the filters. Select different values in the rights or place dropdowns and watch the table update.
+
+Look at the row counts. They should match what you expect from your data.
+
+If you included the validation report, find the "Data Quality Status" section and confirm it displays correctly.
+
+---
+
+## Step 6: Stop the App
+
+When you are finished exploring, go back to your terminal and press Ctrl+C.
+
+The server stops and your terminal prompt returns.
+
+---
+
+## Checkpoint
+
+Before moving on, confirm:
+
+- [ ] Streamlit installed without errors
+- [ ] The app launched and displayed your data
+- [ ] You could filter by rights or place
+- [ ] (Optional) The validation report appeared in the app
+
+If all items are checked, you have completed the optional Lab 03.
+
+---
+
+## If Something Went Wrong
+
+**Module not found:** Run `pip install streamlit` again. Make sure you are in the same Python environment where you want to run the app.
+
+**App cannot find the data file:** Run the app from the `lab-03/` folder. The script uses relative paths. If you run from a different folder, the paths break.
+
+**Validation report not showing:** Confirm `validation_report.md` is in the `lab-03/` folder (not in a subfolder). Restart the app after adding the file.
+
+**Browser did not open:** Copy the local URL from the terminal output and paste it into your browser.
+
+**App crashes with an error:** Read the error message in the terminal. Common issues are missing dependencies (install them with pip) or file path errors (check that the data file exists where the app expects it).

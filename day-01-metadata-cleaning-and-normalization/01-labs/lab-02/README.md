@@ -1,61 +1,132 @@
 # Lab 02: Clean, Make Values Consistent, and Export a Reproducible Recipe
 
-Goal: apply targeted fixes to rights, place, and creator fields, then export both the cleaned CSV and the OpenRefine operations file (a saved record of the steps).
+The goal of this lab is to apply targeted fixes to rights, place, and creator fields, then export both the cleaned CSV and the OpenRefine operations file. The operations file is the most important artifact because it captures your exact steps for future reruns.
 
-Inputs:
+This takes about 30 minutes.
+
+**Inputs:**
 - `../lab-01/inputs/collection_export_raw.csv`
 - Optional: your saved OpenRefine project from Lab 01
 
-Outputs:
+**Outputs:**
 - Cleaned CSV saved to `outputs/collection_cleaned.csv`
-- Operations file saved to `artifacts/openrefine_operations.json` (a `.json` file meaning a structured text format; already provided; update with your own if you add steps)
+- Operations file saved to `artifacts/openrefine_operations.json`
 - Data dictionary and dataset README starter files in `artifacts/`
 
-Time: ~30 minutes.
+## Why These Fields, and Why Keep Changes Small
 
-## Why these fields and why we keep changes small
-- **Rights:** high-impact for reuse; ambiguity blocks sharing. We make values consistent with a short allowed list without inventing new statements.
-- **Place:** common search facet; small differences break aggregation. We make names consistent (city/state) while keeping the original intent.
-- **Creator:** attribution needs consistency; we tidy spacing and a light Last, First pattern without pretending to do full authority control.
-- The OpenRefine operations file is the most important outcome because it lets anyone replay your exact steps on future exports.
+**Rights:** High impact for reuse. Ambiguous rights statements block sharing. You will make values consistent with a short allowed list without inventing new statements.
 
-## Steps
-1) **Do:** Open your Day 01 project in OpenRefine (or import the raw CSV again).  
-   **Why:** Starts from the inspected data so your edits trace back to known issues.  
-   **You should see:** The same rows and facets from Lab 01.  
-   **If it doesn't look right:** Re-import the raw CSV and recreate the three facets to confirm the state matches your notes.
+**Place:** Common search facet. Small differences break aggregation. You will standardize names (city/state) while keeping the original intent.
 
-2) **Do:** Apply the provided operations file (`artifacts/openrefine_operations.json`) via Undo/Redo → Apply.  
-   **Why:** Reusing a recipe speeds work and keeps changes reproducible.  
-   **You should see:** Rights values collapse to three options; place values normalize; creator spacing cleans up.  
-   **If it doesn't look right:** Ensure you selected `openrefine_operations.json`, not the CSV; check the Undo/Redo tab for errors and reapply.
+**Creator:** Attribution needs consistency. You will tidy spacing and apply a light Last, First pattern without pretending to do full authority control.
 
-3) **Do:** Add a text facet on `rights` to confirm only the allowed tokens remain.  
-   **Why:** Quick validation that the rights cleanup stuck.  
-   **You should see:** Only `CC BY 4.0`, `Public Domain`, `Rights Reserved`.  
-   **If it doesn't look right:** Reapply the operations file; check for trailing spaces and run a trim transform on `rights` if needed.
+The operations file matters because it lets anyone replay your exact steps on future exports. A CSV can be shared, but the operations file explains how you got there.
 
-4) **Do:** Add a text facet on `place` to confirm variants collapsed.  
-   **Why:** Ensures place cleanup did not leave stray variants.  
-   **You should see:** `New York City, NY` and `Albany, NY`.  
-   **If it doesn't look right:** Look for capitalization differences; reapply the place transforms or adjust the expression and re-export the recipe.
+---
 
-5) **Do:** Spot-check `creator` values (5–10 rows) for spacing and order.  
-   **Why:** Light formatting reduces duplicates, but we avoid heavy merging to prevent meaning loss.  
-   **You should see:** Consistent `Last, First` or tidy versions of existing strings without invented names.  
-   **If it doesn't look right:** Undo and adjust the creator transform to avoid reordering ambiguous names; keep changes minimal.
+## Step 1: Open Your Project
 
-6) **Do:** Export the cleaned data as CSV to `outputs/collection_cleaned.csv` (Export → Comma-separated value).  
-   **Why:** Creates the shareable file your colleagues will use.  
-   **You should see:** A downloaded CSV with normalized rights and places.  
-   **If it doesn't look right:** Confirm the export included headers; ensure no filters are active that might hide rows.
+Open your Day 01 project in OpenRefine. If you saved it from Lab 01, it should appear in your recent projects. If not, reimport the raw CSV from `../lab-01/inputs/collection_export_raw.csv`.
 
-7) **Do:** Export your updated operations file (Undo/Redo → Extract → Save to `artifacts/openrefine_operations.json`).  
-   **Why:** Captures the exact steps for reruns and makes future repeats much easier.  
-   **You should see:** A file downloaded; it should list your transforms.  
-   **If it doesn't look right:** Reopen the Undo/Redo tab to confirm steps exist; re-export and check that the file is not empty.
+You should see the same rows and facets from Lab 01. If the data looks different, reimport the raw CSV and recreate the three facets from Lab 01 to confirm the starting state matches your notes.
 
-8) **Do:** Open `artifacts/data_dictionary_template.md` and `artifacts/dataset_readme_template.md`; fill them with your cleaned field definitions and notes, then save into `05-artifacts/` if desired.  
-   **Why:** Documentation alongside the data preserves meaning and reuse context.  
-   **You should see:** Completed files with every field described, rights guidance noted, and notes on where the file came from and what changed, saved alongside your cleaned CSV.  
-   **If it doesn't look right:** Make sure you opened the markdown files, not the CSV; copy them afresh from `artifacts/` if you edited heavily.
+---
+
+## Step 2: Apply the Provided Operations File
+
+OpenRefine can replay a saved set of transformations. A sample operations file is provided in `artifacts/openrefine_operations.json`. Applying it shows you how reproducibility works in practice.
+
+Go to the Undo/Redo tab (top left of the screen), click Apply, and paste the contents of `artifacts/openrefine_operations.json`. Click Perform Operations.
+
+You should see changes happen immediately. Rights values collapse to three options. Place values normalize. Creator spacing cleans up.
+
+If something goes wrong, check that you pasted the JSON correctly and that the column names in the file match your dataset. Look at the Undo/Redo tab for error messages and try again.
+
+---
+
+## Step 3: Verify Rights Cleanup
+
+Add a text facet on the `rights` column if one is not already visible.
+
+You should see only three values: `CC BY 4.0`, `Public Domain`, `Rights Reserved`. No other variants should remain.
+
+If you still see variants, reapply the operations file. Check for trailing spaces by running a trim transform: click the rights column dropdown, select Edit cells, then Common transforms, then Trim leading and trailing whitespace.
+
+---
+
+## Step 4: Verify Place Cleanup
+
+Add a text facet on the `place` column.
+
+You should see standardized values like `New York City, NY` and `Albany, NY`. No variants like `NYC` or `New york City` should remain.
+
+If variants remain, look at the capitalization. You may need to reapply the place transforms or add a manual fix for a missed case. After fixing, re-export the recipe (Step 7) to capture your adjustment.
+
+---
+
+## Step 5: Spot-Check Creator Values
+
+Look at 5 to 10 rows to confirm creator values have consistent spacing and a light Last, First format where that format already existed.
+
+You should see values like `Doe, Jane` without double spaces. Avoid reordering names that were ambiguous in the original. Keep changes minimal.
+
+If you see problems, undo the last step and simplify the creator transform. Small, conservative changes are better than aggressive cleanup that distorts meaning.
+
+---
+
+## Step 6: Export the Cleaned CSV
+
+Go to the Export menu (top right), select Comma-separated value, and save the file as `outputs/collection_cleaned.csv`.
+
+You should see a downloaded CSV with normalized rights and places. Open it briefly to confirm headers are present and rows look correct.
+
+If rows are missing, check that no filters are active. Go back to OpenRefine, click "Remove All" on the facet panel to clear filters, then re-export.
+
+---
+
+## Step 7: Export Your Updated Operations File
+
+Go to the Undo/Redo tab, click Extract, and copy the JSON. Save it to `artifacts/openrefine_operations.json`, replacing the sample file with your own version.
+
+This captures the exact steps you applied. Anyone can replay this file on a new export to get the same results.
+
+If the extracted JSON is empty, check the Undo/Redo tab for recorded steps. If nothing is there, your transforms may not have applied. Redo them and extract again.
+
+---
+
+## Step 8: Start the Documentation Files
+
+Open `artifacts/data_dictionary_template.md` and `artifacts/dataset_readme_template.md`. Fill them with your cleaned field definitions and notes about what changed.
+
+Save your completed versions into `05-artifacts/` or keep them alongside your cleaned CSV.
+
+Documentation alongside the data preserves meaning and helps others understand your decisions. Even brief notes are valuable.
+
+If you edited heavily and want a clean start, copy fresh templates from `artifacts/`.
+
+---
+
+## Checkpoint
+
+Before moving on, confirm:
+
+- [ ] `outputs/collection_cleaned.csv` exists and has consistent values
+- [ ] `artifacts/openrefine_operations.json` contains your cleaning steps
+- [ ] You started notes on your normalization decisions
+
+If all three are checked, you are ready for Lab 03.
+
+---
+
+## If Something Went Wrong
+
+**Values did not change as expected:** Check whether you applied the transformation to the correct column or had a filter active. Use Undo to step back and try again.
+
+**Operations file will not apply:** Verify the JSON syntax. Check that column names in the file match your dataset exactly. Look for typos.
+
+**Exported CSV has fewer rows:** Clear all filters before exporting. Compare the row count in OpenRefine to the exported file.
+
+**Operations file is empty after extract:** Confirm you made changes. If the Undo/Redo list is empty, your transforms did not apply. Redo them manually.
+
+**Non-UTF-8 characters after export:** Export using UTF-8 encoding. Reopen the file in a UTF-8 aware editor to confirm special characters display correctly.
