@@ -16,7 +16,7 @@ This is your first time writing validation rules in Python. Do not worry if note
 
 A notebook is a document that mixes text and code. You run each code cell by clicking the play button or pressing Shift+Enter. The output appears right below the cell. You work through the notebook from top to bottom, running cells in order.
 
-If something breaks, read the error message. Most errors in this lab come from file paths or missing uploads. The fixes are usually straightforward.
+If something breaks, read the error message. Most errors in this lab come from file paths. The fixes are usually straightforward.
 
 ---
 
@@ -24,11 +24,13 @@ If something breaks, read the error message. Most errors in this lab come from f
 
 Click the "Open in Colab" badge above, or open `notebooks/lab01_profile.ipynb` in Google Colab manually.
 
-Run the first cell to load the CSV. If you are using Colab, you may need to upload the file when prompted.
+Run the first cell to load the CSV.
 
 You should see a 4-row preview (or however many rows your sample has) with columns `id`, `title`, `creator`, `place`, `rights`, `date`.
 
-If the load fails, check the file path. In Colab, make sure you uploaded the file during this session. The file should be named exactly `collection_cleaned.csv`.
+In Colab, the notebook will clone this repo into `/content/data-workflows-workshop` so it can read `inputs/collection_cleaned.csv`.
+
+If the load fails, check the file path and rerun the first cell.
 
 ---
 
@@ -95,7 +97,7 @@ If all four are checked, you are ready for Lab 02.
 
 ## If Something Went Wrong
 
-**Notebook will not load the CSV:** Check the file path. In Colab, files must be uploaded each session. Make sure the filename matches exactly.
+**Notebook will not load the CSV:** Check the file path, then rerun the first cell (especially after a Colab runtime reset).
 
 **Shape looks wrong:** Look for extra header rows or merged cells from the original export. Re-export from OpenRefine if needed.
 
