@@ -26,9 +26,9 @@ Open `notebooks/lab03_report.ipynb` in Colab or locally.
 
 Run the install cell if prompted. You should see Pandera install successfully.
 
-Run the notebook from the `lab-03/` folder so imports find the schema file in `../lab-02/deliverables/`.
+In Colab, the notebook will clone this repo into `/content/data-workflows-workshop` so it can read the lab files.
 
-If imports fail, check the relative path. The notebook expects to import from `../lab-02/deliverables/validation_schema.py`.
+If imports fail, confirm `validation_schema.py` exists at `../lab-02/deliverables/validation_schema.py` (relative to the `lab-03/notebooks/` folder).
 
 ---
 
