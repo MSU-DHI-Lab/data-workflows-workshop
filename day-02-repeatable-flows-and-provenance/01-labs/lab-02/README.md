@@ -2,7 +2,7 @@
 
 The goal of this lab is to build an explainable NiFi flow that ingests files, makes rights text consistent, routes questionable files to quarantine, and writes clean files to an outbox. This takes about 30 minutes.
 
-**Inputs:** `inputs/` folder seeded with `intake_sample.csv` from Lab 01
+**Inputs:** `../lab-01/inputs/intake_sample.csv` copied into this lab’s `inputs/` folder
 
 **Outputs:**
 - Cleaned files in `outputs/`

@@ -2,7 +2,7 @@
 
 The goal of this lab is to verify quarantine routing works and trace one file through NiFi's run record (called "provenance") to explain what happened. This takes about 20 minutes.
 
-**Inputs:** Your flow from Lab 02, sample files in `inputs/`
+**Inputs:** Your flow from Lab 02, sample files in `../lab-02/inputs/`
 
 **Outputs:** Quarantined files (if any), run record notes in `deliverables/provenance_narrative_template.md`
 
@@ -28,13 +28,13 @@ If the connection is missing, create it now: drag from RouteOnContent, select th
 
 ## Step 2: Test Quarantine with a Bad File
 
-Create a test file with an unexpected rights string. You can copy `intake_sample.csv` and edit the rights value to something invalid like `Rights Unknown`.
+Create a test file with an unexpected rights string. Copy `../lab-01/inputs/intake_sample.csv` (or a file you previously processed) and edit the rights value to something invalid like `Rights Unknown`.
 
-Save the modified file into `inputs/`.
+Save the modified file into `../lab-02/inputs/`.
 
 Start all processors if they are not already running. Wait a moment for the file to process.
 
-You should see the file appear in the `quarantine/` folder, not the `outputs/` folder. This confirms the routing rule is working.
+You should see the file appear in the `../lab-02/quarantine/` folder, not the `../lab-02/outputs/` folder. This confirms the routing rule is working.
 
 If the file went to outputs instead, check your RouteOnContent regex. The pattern should match files that do NOT contain any allowed rights token.
 

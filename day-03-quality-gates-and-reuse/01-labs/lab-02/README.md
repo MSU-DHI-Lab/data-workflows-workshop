@@ -92,7 +92,7 @@ Examples:
 - `id > 0` catches placeholder or error values
 - `title not blank` ensures every record has a human-readable label
 
-Save these notes alongside your schema or in `05-deliverables/README.md`. Documentation makes the checks understandable to future maintainers.
+Save these notes alongside your schema or in the day’s `../../05-deliverables/README.md`. Documentation makes the checks understandable to future maintainers.
 
 ---
 

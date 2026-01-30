@@ -28,7 +28,7 @@ The app reads directly from this path. If the file is missing, go back to Lab 01
 
 ## Step 2: Add the Validation Report (Optional)
 
-If you have `validation_report.md` from Day 03, copy it into this lab folder (`lab-03/`).
+This lab folder includes a sample `validation_report.md`. If you have your own `validation_report.md` from Day 03, copy it into this lab folder (`lab-03/`) and replace the sample.
 
 The app can display this report in a "Data Quality Status" section. It shows colleagues that the data passed inspection.
 

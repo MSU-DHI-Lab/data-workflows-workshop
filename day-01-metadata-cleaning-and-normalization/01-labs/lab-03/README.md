@@ -76,7 +76,7 @@ If you see unexpected values, your cleaning may not have applied completely. Go 
 
 Run cell 5 (the final code cell, under "Validation summary"). It prints a short text block with row count, missing values, and distinct tokens.
 
-Copy this output into `05-deliverables/README.md` or your notes. This captures evidence for downstream teams and future reruns.
+Copy this output into the day’s `../../05-deliverables/README.md` or your notes. This captures evidence for downstream teams and future reruns.
 
 If the summary is empty, make sure the previous cells ran successfully. Rerun from the top of the notebook if needed.
 
@@ -99,7 +99,7 @@ If all four are checked, you have completed Day 01.
 
 **Colab cannot see the uploaded file:** Confirm you uploaded the file in the current session. Colab sessions are temporary, so files disappear when the session ends. Re-upload if needed.
 
-**Import errors for pandas or pandera:** Run the install cell at the top of the notebook, then restart the runtime (Runtime menu, then Restart runtime) and run cells from the top.
+**Import errors for pandas:** Run the install cell at the top of the notebook, then restart the runtime (Runtime menu, then Restart runtime) and run cells from the top.
 
 **Validation shows unexpected missing values:** Inspect the column in OpenRefine. Confirm no cells were blanked during trimming. If needed, restore from the saved project and re-clean.
 

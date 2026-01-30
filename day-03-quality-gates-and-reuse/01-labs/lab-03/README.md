@@ -80,7 +80,7 @@ For each failure, decide:
 
 Write a few bullet points connecting failures to actions. This shows careful review, not just running tools.
 
-Add your notes to the report or keep them in `05-deliverables/README.md`.
+Add your notes to the report or keep them in the day’s `../../05-deliverables/README.md`.
 
 ---
 
