@@ -28,7 +28,7 @@ Run the install cell if prompted. You should see Pandera install successfully.
 
 In Colab, the notebook will clone this repo into `/content/data-workflows-workshop` so it can read the lab files.
 
-If imports fail, confirm `validation_schema.py` exists at `../lab-02/deliverables/validation_schema.py` (relative to the `lab-03/notebooks/` folder).
+In Colab, you can also upload `validation_schema.py` (from Lab 02) and `collection_with_failures.csv` directly into the Colab Files panel, and the notebook will use those instead.
 
 ---
 
@@ -36,7 +36,7 @@ If imports fail, confirm `validation_schema.py` exists at `../lab-02/deliverable
 
 Run the rules import and data load cell.
 
-The notebook loads your validation schema from Lab 02 and reads `collection_with_failures.csv`, a dataset with known issues.
+The notebook loads your validation schema from Lab 02 and reads `collection_with_failures.csv`, a dataset with known issues. It will prefer uploaded files in Colab, otherwise it uses the repo versions.
 
 You should see a preview of the data. Look for suspicious values: a missing id, a bad rights token, a date far in the future.
 
